@@ -131,10 +131,12 @@ def cache_is_fresh(cache: dict, now: datetime) -> bool:
 
 def get_fixtures(teams: list[dict], now: datetime, force_refresh: bool) -> dict:
     cache = load_json(CACHE_PATH, {})
-    if not force_refresh and cache_is_fresh(cache, now) and "by_team" in cache:
+    by_team_cached = cache.get("by_team", {})
+    cache_has_data = any(by_team_cached.get(str(t["id"])) for t in teams)
+    if not force_refresh and cache_is_fresh(cache, now) and cache_has_data:
         age_min = (now - datetime.fromisoformat(cache["fetched_at"])).total_seconds() / 60
         print(f"[cache] using cached fixtures (age {age_min:.0f} min)")
-        return cache["by_team"]
+        return by_team_cached
 
     print("[cache] refreshing fixtures from Sofascore")
     by_team = {}
