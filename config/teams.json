@@ -1,14 +1,16 @@
 {
   "teams": [
     {
-      "id": 3202,
       "name": "Boca Juniors",
-      "emoji": "🔵🟡"
+      "match": "Boca Juniors",
+      "emoji": "🔵🟡",
+      "leagues": ["arg.1", "conmebol.libertadores", "conmebol.sudamericana"]
     },
     {
-      "id": 2817,
       "name": "FC Barcelona",
-      "emoji": "🔵🔴"
+      "match": "Barcelona",
+      "emoji": "🔵🔴",
+      "leagues": ["esp.1", "esp.copa_del_rey", "uefa.champions", "uefa.super_cup", "esp.super_cup"]
     }
   ]
 }

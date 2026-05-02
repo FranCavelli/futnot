@@ -12,23 +12,21 @@ CONFIG_PATH = ROOT / "config" / "teams.json"
 STATE_PATH = ROOT / "state" / "sent.json"
 CACHE_PATH = ROOT / "state" / "fixtures_cache.json"
 
-SOFASCORE_BASE = "https://api.sofascore.com/api/v1"
+ESPN_BASE = "https://site.api.espn.com/apis/site/v2/sports/soccer"
 CALLMEBOT_URL = "https://api.callmebot.com/whatsapp.php"
 
 PRE_MATCH_MINUTES = 30
 START_GRACE_MINUTES = 60
 STATE_RETENTION_DAYS = 3
 CACHE_TTL_HOURS = 6
+DAYS_AHEAD = 14
 LOCAL_TZ = timezone(timedelta(hours=-3))   # Argentina (UTC-3, no DST)
 
-SOFASCORE_HEADERS = {
+ESPN_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
                   "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     "Accept": "application/json",
-    "Referer": "https://www.sofascore.com/",
 }
-
-SKIP_STATUSES = {"finished", "canceled"}
 
 
 def env(name: str) -> str:
@@ -39,44 +37,74 @@ def env(name: str) -> str:
     return v
 
 
-def fetch_team_fixtures(team: dict) -> list[dict]:
+def fetch_league_events(league_slug: str) -> tuple[str, list[dict]]:
+    today = datetime.now(timezone.utc).date()
+    end = today + timedelta(days=DAYS_AHEAD)
+    date_param = f"{today.strftime('%Y%m%d')}-{end.strftime('%Y%m%d')}"
+    r = requests.get(
+        f"{ESPN_BASE}/{league_slug}/scoreboard",
+        params={"dates": date_param},
+        headers=ESPN_HEADERS,
+        timeout=20,
+    )
+    if r.status_code == 404:
+        print(f"ESPN: league {league_slug} not found (404)", file=sys.stderr)
+        return league_slug, []
+    if r.status_code >= 400:
+        print(f"ESPN HTTP {r.status_code} for {league_slug}: {r.text[:200]}", file=sys.stderr)
+        return league_slug, []
+    body = r.json()
+    leagues = body.get("leagues") or []
+    name = (leagues[0].get("name") if leagues else league_slug) or league_slug
+    return name, body.get("events", []) or []
+
+
+def extract_fixture(ev: dict, league_name: str) -> dict | None:
+    comp = (ev.get("competitions") or [{}])[0]
+    competitors = comp.get("competitors", []) or []
+    home = next((c for c in competitors if c.get("homeAway") == "home"), {})
+    away = next((c for c in competitors if c.get("homeAway") == "away"), {})
+    home_name = (home.get("team") or {}).get("displayName", "")
+    away_name = (away.get("team") or {}).get("displayName", "")
+    if not home_name or not away_name:
+        return None
+    state = (((ev.get("status") or {}).get("type") or {}).get("state", ""))
+    if state == "post":   # finished
+        return None
+    raw_date = ev.get("date")
+    if not raw_date:
+        return None
+    try:
+        kickoff = datetime.fromisoformat(raw_date.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    return {
+        "id": str(ev.get("id")),
+        "kickoff": kickoff.isoformat(),
+        "league": league_name,
+        "home": home_name,
+        "away": away_name,
+    }
+
+
+def fetch_team_fixtures(team: dict, league_cache: dict) -> list[dict]:
     out = []
     seen = set()
-    for page in range(2):   # ~30 events max, plenty
-        try:
-            r = requests.get(
-                f"{SOFASCORE_BASE}/team/{team['id']}/events/next/{page}",
-                headers=SOFASCORE_HEADERS,
-                timeout=20,
-            )
-        except requests.RequestException as e:
-            print(f"Sofascore error for {team['name']} page {page}: {e}", file=sys.stderr)
-            break
-        if r.status_code == 404:
-            break
-        if r.status_code >= 400:
-            print(f"Sofascore HTTP {r.status_code} for {team['name']}: {r.text[:200]}", file=sys.stderr)
-            break
-        body = r.json()
-        events = body.get("events", []) or []
+    match_str = team["match"].lower()
+    for slug in team.get("leagues", []):
+        if slug not in league_cache:
+            league_cache[slug] = fetch_league_events(slug)
+        league_name, events = league_cache[slug]
         for ev in events:
-            status_type = (ev.get("status") or {}).get("type", "")
-            if status_type in SKIP_STATUSES:
+            fx = extract_fixture(ev, league_name)
+            if not fx:
                 continue
-            fid = ev["id"]
-            if fid in seen:
+            if match_str not in fx["home"].lower() and match_str not in fx["away"].lower():
                 continue
-            seen.add(fid)
-            kickoff = datetime.fromtimestamp(ev["startTimestamp"], tz=timezone.utc)
-            out.append({
-                "id": str(fid),
-                "kickoff": kickoff.isoformat(),
-                "league": (ev.get("tournament") or {}).get("name", ""),
-                "home": (ev.get("homeTeam") or {}).get("name", ""),
-                "away": (ev.get("awayTeam") or {}).get("name", ""),
-            })
-        if not body.get("hasNextPage"):
-            break
+            if fx["id"] in seen:
+                continue
+            seen.add(fx["id"])
+            out.append(fx)
     return out
 
 
@@ -132,26 +160,28 @@ def cache_is_fresh(cache: dict, now: datetime) -> bool:
 def get_fixtures(teams: list[dict], now: datetime, force_refresh: bool) -> dict:
     cache = load_json(CACHE_PATH, {})
     by_team_cached = cache.get("by_team", {})
-    cache_has_data = any(by_team_cached.get(str(t["id"])) for t in teams)
+    cache_has_data = any(by_team_cached.get(t["name"]) for t in teams)
     if not force_refresh and cache_is_fresh(cache, now) and cache_has_data:
         age_min = (now - datetime.fromisoformat(cache["fetched_at"])).total_seconds() / 60
         print(f"[cache] using cached fixtures (age {age_min:.0f} min)")
         return by_team_cached
 
-    print("[cache] refreshing fixtures from Sofascore")
+    print("[cache] refreshing fixtures from ESPN")
+    league_cache: dict[str, tuple[str, list[dict]]] = {}
     by_team = {}
     any_success = False
     for team in teams:
-        fixtures = fetch_team_fixtures(team)
-        by_team[str(team["id"])] = fixtures
+        fixtures = fetch_team_fixtures(team, league_cache)
+        by_team[team["name"]] = fixtures
         if fixtures:
             any_success = True
 
-    if any_success or not cache.get("by_team"):
+    fetched_any_league = any(events for _, events in league_cache.values())
+    if any_success or fetched_any_league or not cache.get("by_team"):
         save_json(CACHE_PATH, {"fetched_at": now.isoformat(), "by_team": by_team})
         return by_team
     print("[cache] refresh failed, falling back to stale cache", file=sys.stderr)
-    return cache["by_team"]
+    return cache.get("by_team", {})
 
 
 def fmt_local(dt_utc: datetime) -> str:
@@ -190,8 +220,7 @@ def main() -> int:
     fixtures_by_team = get_fixtures(teams, now, force_refresh=test_mode)
 
     for team in teams:
-        team_id = str(team["id"])
-        fixtures = fixtures_by_team.get(team_id, [])
+        fixtures = fixtures_by_team.get(team["name"], [])
         print(f"[fetch] {team['name']}: {len(fixtures)} upcoming fixtures")
 
         if test_mode:
