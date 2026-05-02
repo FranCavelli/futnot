@@ -1,16 +1,14 @@
 {
   "teams": [
     {
-      "id": 451,
+      "id": 3202,
       "name": "Boca Juniors",
-      "emoji": "🔵🟡",
-      "season": 2026
+      "emoji": "🔵🟡"
     },
     {
-      "id": 529,
+      "id": 2817,
       "name": "FC Barcelona",
-      "emoji": "🔵🔴",
-      "season": 2025
+      "emoji": "🔵🔴"
     }
   ]
 }

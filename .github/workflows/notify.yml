@@ -32,7 +32,6 @@ jobs:
 
       - name: Run notifier
         env:
-          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
           WHATSAPP_PHONE: ${{ secrets.WHATSAPP_PHONE }}
           WHATSAPP_APIKEY: ${{ secrets.WHATSAPP_APIKEY }}
           TEST_MODE: ${{ inputs.test_mode }}

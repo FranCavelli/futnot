@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.thesportsdb.com)",
+      "WebFetch(domain:api.sofascore.com)"
+    ]
+  }
+}

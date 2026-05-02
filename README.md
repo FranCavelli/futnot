@@ -8,14 +8,11 @@ Por default está configurado con **Boca Juniors** y **FC Barcelona** en todas s
 
 ## 1. Conseguir las credenciales (5 minutos)
 
-### a) API-Football (datos de partidos)
+### Datos de partidos
 
-1. Registrate gratis en https://dashboard.api-football.com/register
-2. Confirmá el email y entrá al dashboard
-3. Copiá tu **API key** (sección "My Access")
-4. Plan gratuito: 100 requests/día. Este bot usa ~24/día con 2 equipos, sobra.
+Los datos se obtienen de la API pública de SofaScore — gratis, sin API key, sin registro. No hace falta hacer nada.
 
-### b) CallMeBot (envío de WhatsApp)
+### CallMeBot (envío de WhatsApp)
 
 1. Agendá el contacto **+34 644 51 95 23** en tu teléfono
 2. Desde **tu WhatsApp** mandale el mensaje exacto:
@@ -50,11 +47,10 @@ Por default está configurado con **Boca Juniors** y **FC Barcelona** en todas s
 
 En el repo: **Settings → Secrets and variables → Actions → New repository secret**
 
-Crear los tres secrets:
+Crear los dos secrets:
 
 | Nombre              | Valor                                          |
 |---------------------|------------------------------------------------|
-| `API_FOOTBALL_KEY`  | la API key de api-football.com                 |
 | `WHATSAPP_PHONE`    | tu teléfono en formato internacional, sin `+`  |
 | `WHATSAPP_APIKEY`   | el apikey que te dio CallMeBot                 |
 
@@ -73,21 +69,20 @@ A partir de ahí el cron corre solo cada 5 minutos.
 
 ## 5. Cambiar/agregar equipos
 
-Editá `config/teams.json`. Necesitás el ID de API-Football del equipo:
+Editá `config/teams.json`. Para conseguir el ID de SofaScore:
 
 ```bash
-curl -H "x-apisports-key: TU_API_KEY" \
-  "https://v3.football.api-sports.io/teams?search=river"
+curl "https://api.sofascore.com/api/v1/search/teams?q=river+plate" | python -m json.tool
 ```
 
-Copiá el `id` del resultado y agregalo:
+Copiá el `id` del equipo correcto:
 
 ```json
 {
   "teams": [
-    { "id": 451, "name": "Boca Juniors", "emoji": "🔵🟡" },
-    { "id": 529, "name": "FC Barcelona", "emoji": "🔵🔴" },
-    { "id": 435, "name": "River Plate", "emoji": "⚪🔴" }
+    { "id": 3202, "name": "Boca Juniors", "emoji": "🔵🟡" },
+    { "id": 2817, "name": "FC Barcelona", "emoji": "🔵🔴" },
+    { "id": 2816, "name": "River Plate", "emoji": "⚪🔴" }
   ]
 }
 ```
@@ -112,7 +107,8 @@ python -c "from pathlib import Path; [__import__('os').environ.update([l.strip()
 ## Cómo funciona
 
 - GitHub Actions ejecuta `src/main.py` cada 5 minutos.
-- El script consulta los próximos 5 partidos de cada equipo en API-Football.
+- El script consulta los próximos partidos de cada equipo en SofaScore.
+- Para no consumir muchas requests, los fixtures se cachean 6 horas en `state/fixtures_cache.json`.
 - Si un partido arranca dentro de los próximos 30 min y aún no se notificó, manda WhatsApp.
 - Si un partido ya empezó (hasta 60 min de gracia) y aún no se notificó, manda WhatsApp.
 - El estado de las notificaciones enviadas se guarda en `state/sent.json` (committeado por el bot) para evitar duplicados.
@@ -120,5 +116,5 @@ python -c "from pathlib import Path; [__import__('os').environ.update([l.strip()
 ## Limitaciones
 
 - **CallMeBot** es no-oficial y depende de WhatsApp Web. Funciona, pero puede romperse si WhatsApp cambia algo. Si pasa, alternativa robusta: cambiar a Telegram Bot API (oficial, gratis, ilimitada). El cambio sería sólo la función `send_whatsapp` en `src/main.py`.
-- **API-Football free tier**: 100 requests/día. Con 2 equipos y cron cada 5 min, usás ~24 al día. Si agregás muchos equipos puede no alcanzar.
+- **SofaScore** es una API no-oficial (sin contrato de servicio). Funciona muy bien para uso personal de bajo volumen, pero podrían bloquearla. Si pasa, alternativas: football-data.org (cubre Barcelona pero no Boca) o web scraping.
 - El cron de GitHub Actions tiene una latencia de hasta 5–15 minutos en horas pico — los avisos pueden llegar uno o dos minutos antes/después de la marca exacta.
