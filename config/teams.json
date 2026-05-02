@@ -1,0 +1,14 @@
+{
+  "teams": [
+    {
+      "id": 451,
+      "name": "Boca Juniors",
+      "emoji": "🔵🟡"
+    },
+    {
+      "id": 529,
+      "name": "FC Barcelona",
+      "emoji": "🔵🔴"
+    }
+  ]
+}
