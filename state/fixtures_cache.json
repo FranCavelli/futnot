@@ -1,7 +1,44 @@
 {
-  "fetched_at": "2026-05-02T18:24:54.618347+00:00",
+  "fetched_at": "2026-05-02T18:39:33.212032+00:00",
   "by_team": {
-    "451": [],
-    "529": []
+    "Boca Juniors": [
+      {
+        "id": "762907",
+        "kickoff": "2026-05-02T19:15:00+00:00",
+        "league": "Argentine Liga Profesional de Fútbol",
+        "home": "Central Córdoba (Santiago del Estero)",
+        "away": "Boca Juniors"
+      },
+      {
+        "id": "401865522",
+        "kickoff": "2026-05-06T00:00:00+00:00",
+        "league": "CONMEBOL Libertadores",
+        "home": "Barcelona SC",
+        "away": "Boca Juniors"
+      }
+    ],
+    "FC Barcelona": [
+      {
+        "id": "748480",
+        "kickoff": "2026-05-02T19:00:00+00:00",
+        "league": "Spanish LALIGA",
+        "home": "Osasuna",
+        "away": "Barcelona"
+      },
+      {
+        "id": "748484",
+        "kickoff": "2026-05-10T19:00:00+00:00",
+        "league": "Spanish LALIGA",
+        "home": "Barcelona",
+        "away": "Real Madrid"
+      },
+      {
+        "id": "748498",
+        "kickoff": "2026-05-13T19:30:00+00:00",
+        "league": "Spanish LALIGA",
+        "home": "Alavés",
+        "away": "Barcelona"
+      }
+    ]
   }
 }
