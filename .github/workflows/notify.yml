@@ -43,7 +43,18 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add state/sent.json
-          if ! git diff --staged --quiet; then
-            git commit -m "chore: update notification state [skip ci]"
-            git push
+          if git diff --staged --quiet; then
+            echo "no state changes"
+            exit 0
           fi
+          git commit -m "chore: update notification state [skip ci]"
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              echo "push ok on attempt $attempt"
+              exit 0
+            fi
+            echo "push rejected, rebasing and retrying ($attempt)"
+            git pull --rebase origin main
+          done
+          echo "push failed after retries"
+          exit 1
