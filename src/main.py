@@ -30,17 +30,27 @@ def env(name: str) -> str:
 
 
 def fetch_fixtures(team_id: int, api_key: str) -> list[dict]:
+    today = datetime.now(timezone.utc).date()
+    end = today + timedelta(days=14)
     r = requests.get(
         f"{API_BASE}/fixtures",
         headers={"x-apisports-key": api_key},
-        params={"team": team_id, "next": 5},
+        params={
+            "team": team_id,
+            "from": today.isoformat(),
+            "to": end.isoformat(),
+            "timezone": "UTC",
+        },
         timeout=20,
     )
     r.raise_for_status()
     body = r.json()
     if body.get("errors"):
         print(f"API errors for team {team_id}: {body['errors']}", file=sys.stderr)
-    return body.get("response", [])
+    fixtures = body.get("response", [])
+    # Keep only not-yet-finished matches (NS=not started, TBD, postponed, live, halftime)
+    keep = {"TBD", "NS", "1H", "HT", "2H", "ET", "BT", "P", "SUSP", "INT", "LIVE"}
+    return [f for f in fixtures if f["fixture"]["status"]["short"] in keep]
 
 
 def send_whatsapp(phone: str, apikey: str, message: str) -> None:
@@ -108,10 +118,14 @@ def main() -> int:
     api_key = env("API_FOOTBALL_KEY")
     phone = env("WHATSAPP_PHONE")
     apikey = env("WHATSAPP_APIKEY")
+    test_mode = os.environ.get("TEST_MODE", "").lower() in ("1", "true", "yes")
 
     teams = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))["teams"]
     now = datetime.now(timezone.utc)
     state = prune_state(load_state(), now)
+
+    if test_mode:
+        print("[test] running in TEST_MODE — sending a sample message per team")
 
     for team in teams:
         try:
@@ -120,12 +134,41 @@ def main() -> int:
             print(f"Failed to fetch fixtures for {team['name']}: {e}", file=sys.stderr)
             continue
 
+        print(f"[fetch] {team['name']}: {len(fixtures)} upcoming fixtures")
+
+        if test_mode:
+            if not fixtures:
+                try:
+                    send_whatsapp(phone, apikey, f"[test] {team['name']}: la API no devolvio partidos proximos")
+                except requests.RequestException as e:
+                    print(f"WhatsApp test send failed: {e}", file=sys.stderr)
+                continue
+            fx = fixtures[0]
+            kickoff = datetime.fromisoformat(fx["fixture"]["date"].replace("Z", "+00:00"))
+            league = fx["league"]["name"]
+            home = fx["teams"]["home"]["name"]
+            away = fx["teams"]["away"]["name"]
+            msg = (
+                f"[test] {team['emoji']} proximo partido\n"
+                f"⚽ {home} vs {away}\n"
+                f"🏆 {league}\n"
+                f"🕐 {fmt_local(kickoff)} hs ({kickoff.astimezone(LOCAL_TZ).strftime('%d/%m')})"
+            )
+            try:
+                send_whatsapp(phone, apikey, msg)
+                print(f"[test] sent for {team['name']}")
+            except requests.RequestException as e:
+                print(f"WhatsApp test send failed: {e}", file=sys.stderr)
+            continue
+
         for fx in fixtures:
             fixture_id = str(fx["fixture"]["id"])
             kickoff = datetime.fromisoformat(fx["fixture"]["date"].replace("Z", "+00:00"))
             league = fx["league"]["name"]
             home = fx["teams"]["home"]["name"]
             away = fx["teams"]["away"]["name"]
+            minutes_until_log = (kickoff - now).total_seconds() / 60.0
+            print(f"  - {home} vs {away} ({league}) en {minutes_until_log:.0f} min")
 
             entry = state.get(fixture_id, {
                 "kickoff": kickoff.isoformat(),
@@ -162,7 +205,8 @@ def main() -> int:
 
             state[fixture_id] = entry
 
-    save_state(state)
+    if not test_mode:
+        save_state(state)
     return 0
 
 
