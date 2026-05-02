@@ -15,7 +15,7 @@ CACHE_PATH = ROOT / "state" / "fixtures_cache.json"
 ESPN_BASE = "https://site.api.espn.com/apis/site/v2/sports/soccer"
 CALLMEBOT_URL = "https://api.callmebot.com/whatsapp.php"
 
-PRE_MATCH_MINUTES = 30
+PRE_MATCH_MARKS = [60, 45, 30, 15]   # minutes before kickoff to remind, largest first
 START_GRACE_MINUTES = 60
 STATE_RETENTION_DAYS = 3
 CACHE_TTL_HOURS = 6
@@ -188,9 +188,9 @@ def fmt_local(dt_utc: datetime) -> str:
     return dt_utc.astimezone(LOCAL_TZ).strftime("%H:%M")
 
 
-def build_pre_message(team_emoji: str, league: str, home: str, away: str, kickoff_utc: datetime) -> str:
+def build_pre_message(team_emoji: str, league: str, home: str, away: str, kickoff_utc: datetime, minutes_left: int) -> str:
     return (
-        f"{team_emoji} En 30 minutos\n"
+        f"{team_emoji} En {minutes_left} minutos\n"
         f"⚽ {home} vs {away}\n"
         f"🏆 {league}\n"
         f"🕐 {fmt_local(kickoff_utc)} hs"
@@ -259,17 +259,24 @@ def main() -> int:
                 "team": team["name"],
                 "match": f"{home} vs {away}",
                 "league": league,
-                "pre_sent": False,
+                "pre_marks_sent": [],
                 "start_sent": False,
             })
             entry["kickoff"] = kickoff.isoformat()
+            # migrate from old format (single pre_sent flag)
+            if "pre_marks_sent" not in entry:
+                entry["pre_marks_sent"] = list(PRE_MATCH_MARKS) if entry.get("pre_sent") else []
+            entry.pop("pre_sent", None)
 
-            if not entry["pre_sent"] and 0 < minutes_until <= PRE_MATCH_MINUTES:
-                msg = build_pre_message(team["emoji"], league, home, away, kickoff)
+            unsent_passed = [m for m in PRE_MATCH_MARKS
+                             if m not in entry["pre_marks_sent"] and 0 < minutes_until <= m]
+            if unsent_passed:
+                shown_minutes = max(int(round(minutes_until)), 1)
+                msg = build_pre_message(team["emoji"], league, home, away, kickoff, shown_minutes)
                 try:
                     send_whatsapp(phone, apikey, msg)
-                    entry["pre_sent"] = True
-                    print(f"[pre] {team['name']}: {home} vs {away} in {minutes_until:.0f} min")
+                    entry["pre_marks_sent"] = sorted(set(entry["pre_marks_sent"] + unsent_passed))
+                    print(f"[pre] {team['name']}: {home} vs {away} in {minutes_until:.0f} min (marks fired: {unsent_passed})")
                 except requests.RequestException as e:
                     print(f"WhatsApp send failed (pre): {e}", file=sys.stderr)
 
