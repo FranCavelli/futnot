@@ -4,39 +4,49 @@
     "team": "Boca Juniors",
     "match": "Central Córdoba (Santiago del Estero) vs Boca Juniors",
     "league": "Argentine Liga Profesional de Fútbol",
-    "pre_sent": true,
-    "start_sent": false
+    "start_sent": true,
+    "pre_marks_sent": [
+      60,
+      45,
+      30,
+      15
+    ]
   },
   "401865522": {
     "kickoff": "2026-05-06T00:00:00+00:00",
     "team": "Boca Juniors",
     "match": "Barcelona SC vs Boca Juniors",
     "league": "CONMEBOL Libertadores",
-    "pre_sent": false,
-    "start_sent": false
+    "start_sent": false,
+    "pre_marks_sent": []
   },
   "748480": {
     "kickoff": "2026-05-02T19:00:00+00:00",
     "team": "FC Barcelona",
     "match": "Osasuna vs Barcelona",
     "league": "Spanish LALIGA",
-    "pre_sent": true,
-    "start_sent": true
+    "start_sent": true,
+    "pre_marks_sent": [
+      60,
+      45,
+      30,
+      15
+    ]
   },
   "748484": {
     "kickoff": "2026-05-10T19:00:00+00:00",
     "team": "FC Barcelona",
     "match": "Barcelona vs Real Madrid",
     "league": "Spanish LALIGA",
-    "pre_sent": false,
-    "start_sent": false
+    "start_sent": false,
+    "pre_marks_sent": []
   },
   "748498": {
     "kickoff": "2026-05-13T19:30:00+00:00",
     "team": "FC Barcelona",
     "match": "Alavés vs Barcelona",
     "league": "Spanish LALIGA",
-    "pre_sent": false,
-    "start_sent": false
+    "start_sent": false,
+    "pre_marks_sent": []
   }
 }
