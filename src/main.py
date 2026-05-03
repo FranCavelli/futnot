@@ -222,11 +222,22 @@ def get_fixtures(
     cache = load_json(CACHE_PATH, {})
     by_team_cached = cache.get("by_team", {})
     knockouts_cached = cache.get("knockouts", [])
+    knockouts_enabled = bool(knockouts_config and knockouts_config.get("enabled", True))
+    missing_teams = [t["name"] for t in teams if t["name"] not in by_team_cached]
+    knockouts_missing = knockouts_enabled and "knockouts" not in cache
     cache_has_data = any(by_team_cached.get(t["name"]) for t in teams) or knockouts_cached
-    if not force_refresh and cache_is_fresh(cache, now) and cache_has_data:
+    cache_is_complete = not missing_teams and not knockouts_missing
+    if not force_refresh and cache_is_fresh(cache, now) and cache_has_data and cache_is_complete:
         age_min = (now - datetime.fromisoformat(cache["fetched_at"])).total_seconds() / 60
         print(f"[cache] using cached fixtures (age {age_min:.0f} min)")
         return by_team_cached, knockouts_cached
+    if missing_teams or knockouts_missing:
+        reason = []
+        if missing_teams:
+            reason.append(f"missing teams in cache: {missing_teams}")
+        if knockouts_missing:
+            reason.append("knockouts not in cache")
+        print(f"[cache] invalidating ({'; '.join(reason)})")
 
     print("[cache] refreshing fixtures from ESPN")
     league_cache: dict[str, tuple[str, list[dict]]] = {}

@@ -4,7 +4,8 @@
       "WebFetch(domain:www.thesportsdb.com)",
       "WebFetch(domain:api.sofascore.com)",
       "WebFetch(domain:site.api.espn.com)",
-      "Bash(python -m py_compile \"C:\\\\Users\\\\FranC\\\\OneDrive\\\\Escritorio\\\\futnot\\\\src\\\\main.py\")"
+      "Bash(python -m py_compile \"C:\\\\Users\\\\FranC\\\\OneDrive\\\\Escritorio\\\\futnot\\\\src\\\\main.py\")",
+      "Bash(python *)"
     ]
   }
 }
