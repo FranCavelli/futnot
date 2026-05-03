@@ -1,13 +1,50 @@
 {
-  "fetched_at": "2026-05-03T15:34:49.081116+00:00",
+  "fetched_at": "2026-05-03T18:42:46.824835+00:00",
   "by_team": {
     "Boca Juniors": [
       {
         "id": "401865522",
         "kickoff": "2026-05-06T00:00:00+00:00",
         "league": "CONMEBOL Libertadores",
+        "stage_key": null,
         "home": "Barcelona SC",
         "away": "Boca Juniors"
+      }
+    ],
+    "River Plate": [
+      {
+        "id": "762899",
+        "kickoff": "2026-05-03T21:30:00+00:00",
+        "league": "Argentine Liga Profesional de Fútbol",
+        "stage_key": null,
+        "home": "River Plate",
+        "away": "Atlético Tucumán"
+      },
+      {
+        "id": "401865426",
+        "kickoff": "2026-05-08T00:30:00+00:00",
+        "league": "CONMEBOL Sudamericana",
+        "stage_key": null,
+        "home": "Carabobo",
+        "away": "River Plate"
+      }
+    ],
+    "Racing Club": [
+      {
+        "id": "762898",
+        "kickoff": "2026-05-03T19:00:00+00:00",
+        "league": "Argentine Liga Profesional de Fútbol",
+        "stage_key": null,
+        "home": "Racing Club",
+        "away": "Huracán"
+      },
+      {
+        "id": "401865419",
+        "kickoff": "2026-05-07T00:30:00+00:00",
+        "league": "CONMEBOL Sudamericana",
+        "stage_key": null,
+        "home": "Botafogo",
+        "away": "Racing Club"
       }
     ],
     "FC Barcelona": [
@@ -15,6 +52,7 @@
         "id": "748484",
         "kickoff": "2026-05-10T19:00:00+00:00",
         "league": "Spanish LALIGA",
+        "stage_key": null,
         "home": "Barcelona",
         "away": "Real Madrid"
       },
@@ -22,6 +60,7 @@
         "id": "748498",
         "kickoff": "2026-05-13T19:30:00+00:00",
         "league": "Spanish LALIGA",
+        "stage_key": null,
         "home": "Alavés",
         "away": "Barcelona"
       },
@@ -29,9 +68,107 @@
         "id": "748508",
         "kickoff": "2026-05-17T18:00:00+00:00",
         "league": "Spanish LALIGA",
+        "stage_key": null,
         "home": "Barcelona",
         "away": "Real Betis"
       }
+    ],
+    "Manchester City": [
+      {
+        "id": "740941",
+        "kickoff": "2026-05-04T19:00:00+00:00",
+        "league": "English Premier League",
+        "stage_key": null,
+        "home": "Everton",
+        "away": "Manchester City"
+      },
+      {
+        "id": "740951",
+        "kickoff": "2026-05-09T16:30:00+00:00",
+        "league": "English Premier League",
+        "stage_key": null,
+        "home": "Manchester City",
+        "away": "Brentford"
+      },
+      {
+        "id": "740902",
+        "kickoff": "2026-05-13T19:00:00+00:00",
+        "league": "English Premier League",
+        "stage_key": null,
+        "home": "Manchester City",
+        "away": "Crystal Palace"
+      },
+      {
+        "id": "401867655",
+        "kickoff": "2026-05-16T14:00:00+00:00",
+        "league": "English FA Cup",
+        "stage_key": null,
+        "home": "Chelsea",
+        "away": "Manchester City"
+      }
+    ],
+    "Manchester United": [
+      {
+        "id": "740953",
+        "kickoff": "2026-05-09T14:00:00+00:00",
+        "league": "English Premier League",
+        "stage_key": null,
+        "home": "Sunderland",
+        "away": "Manchester United"
+      },
+      {
+        "id": "740963",
+        "kickoff": "2026-05-17T11:30:00+00:00",
+        "league": "English Premier League",
+        "stage_key": null,
+        "home": "Manchester United",
+        "away": "Nottingham Forest"
+      }
+    ],
+    "Liverpool": [
+      {
+        "id": "740950",
+        "kickoff": "2026-05-09T11:30:00+00:00",
+        "league": "English Premier League",
+        "stage_key": null,
+        "home": "Liverpool",
+        "away": "Chelsea"
+      },
+      {
+        "id": "740957",
+        "kickoff": "2026-05-17T11:30:00+00:00",
+        "league": "English Premier League",
+        "stage_key": null,
+        "home": "Aston Villa",
+        "away": "Liverpool"
+      }
+    ],
+    "Chelsea": [
+      {
+        "id": "740940",
+        "kickoff": "2026-05-04T14:00:00+00:00",
+        "league": "English Premier League",
+        "stage_key": null,
+        "home": "Chelsea",
+        "away": "Nottingham Forest"
+      },
+      {
+        "id": "740950",
+        "kickoff": "2026-05-09T11:30:00+00:00",
+        "league": "English Premier League",
+        "stage_key": null,
+        "home": "Liverpool",
+        "away": "Chelsea"
+      },
+      {
+        "id": "401867655",
+        "kickoff": "2026-05-16T14:00:00+00:00",
+        "league": "English FA Cup",
+        "stage_key": null,
+        "home": "Chelsea",
+        "away": "Manchester City"
+      }
     ]
-  }
+  },
+  "knockouts": []
 }
