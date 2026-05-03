@@ -48,5 +48,13 @@
     "league": "Spanish LALIGA",
     "start_sent": false,
     "pre_marks_sent": []
+  },
+  "748508": {
+    "kickoff": "2026-05-17T18:00:00+00:00",
+    "team": "FC Barcelona",
+    "match": "Barcelona vs Real Betis",
+    "league": "Spanish LALIGA",
+    "pre_marks_sent": [],
+    "start_sent": false
   }
 }
