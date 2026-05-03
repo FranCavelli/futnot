@@ -1,5 +1,6 @@
 import json
 import os
+import re
 import sys
 import time
 from datetime import datetime, timedelta, timezone
@@ -21,6 +22,8 @@ STATE_RETENTION_DAYS = 3
 CACHE_TTL_HOURS = 6
 DAYS_AHEAD = 14
 LOCAL_TZ = timezone(timedelta(hours=-3))   # Argentina (UTC-3, no DST)
+
+KNOCKOUT_STAGES = {"round_of_16", "quarterfinal", "semifinal", "final"}
 
 ESPN_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -59,6 +62,38 @@ def fetch_league_events(league_slug: str) -> tuple[str, list[dict]]:
     return name, body.get("events", []) or []
 
 
+def detect_stage(ev: dict) -> tuple[str | None, str | None]:
+    """Return (stage_key, stage_label_es) if this event is part of a knockout round."""
+    comp = (ev.get("competitions") or [{}])[0]
+    parts: list[str] = []
+    for note in comp.get("notes") or []:
+        for k in ("headline", "type"):
+            if note.get(k):
+                parts.append(str(note[k]))
+    season_type = (ev.get("season") or {}).get("type") or {}
+    if season_type.get("name"):
+        parts.append(str(season_type["name"]))
+    status_desc = ((comp.get("status") or {}).get("type") or {}).get("description")
+    if status_desc:
+        parts.append(str(status_desc))
+    if ev.get("name"):
+        parts.append(str(ev["name"]))
+    text = " ".join(parts).lower()
+    if not text:
+        return (None, None)
+    # Order matters: check the more specific labels first so semifinal/quarterfinal
+    # don't get caught by the generic "final" pattern.
+    if "round of 16" in text or "octavos" in text:
+        return ("round_of_16", "Octavos de final")
+    if "quarterfinal" in text or "quarter-final" in text or "quarter final" in text or "cuartos" in text:
+        return ("quarterfinal", "Cuartos de final")
+    if "semifinal" in text or "semi-final" in text or "semi final" in text or "semis" in text:
+        return ("semifinal", "Semifinal")
+    if re.search(r"\bfinal\b", text):
+        return ("final", "Final")
+    return (None, None)
+
+
 def extract_fixture(ev: dict, league_name: str) -> dict | None:
     comp = (ev.get("competitions") or [{}])[0]
     competitors = comp.get("competitors", []) or []
@@ -78,10 +113,13 @@ def extract_fixture(ev: dict, league_name: str) -> dict | None:
         kickoff = datetime.fromisoformat(raw_date.replace("Z", "+00:00"))
     except ValueError:
         return None
+    stage_key, stage_label = detect_stage(ev)
+    league_display = f"{league_name} — {stage_label}" if stage_label else league_name
     return {
         "id": str(ev.get("id")),
         "kickoff": kickoff.isoformat(),
-        "league": league_name,
+        "league": league_display,
+        "stage_key": stage_key,
         "home": home_name,
         "away": away_name,
     }
@@ -100,6 +138,24 @@ def fetch_team_fixtures(team: dict, league_cache: dict) -> list[dict]:
             if not fx:
                 continue
             if match_str not in fx["home"].lower() and match_str not in fx["away"].lower():
+                continue
+            if fx["id"] in seen:
+                continue
+            seen.add(fx["id"])
+            out.append(fx)
+    return out
+
+
+def fetch_knockout_fixtures(knockouts_config: dict, league_cache: dict) -> list[dict]:
+    out = []
+    seen = set()
+    for slug in knockouts_config.get("leagues", []):
+        if slug not in league_cache:
+            league_cache[slug] = fetch_league_events(slug)
+        league_name, events = league_cache[slug]
+        for ev in events:
+            fx = extract_fixture(ev, league_name)
+            if not fx or fx.get("stage_key") not in KNOCKOUT_STAGES:
                 continue
             if fx["id"] in seen:
                 continue
@@ -157,14 +213,20 @@ def cache_is_fresh(cache: dict, now: datetime) -> bool:
     return (now - fetched) < timedelta(hours=CACHE_TTL_HOURS)
 
 
-def get_fixtures(teams: list[dict], now: datetime, force_refresh: bool) -> dict:
+def get_fixtures(
+    teams: list[dict],
+    knockouts_config: dict | None,
+    now: datetime,
+    force_refresh: bool,
+) -> tuple[dict, list[dict]]:
     cache = load_json(CACHE_PATH, {})
     by_team_cached = cache.get("by_team", {})
-    cache_has_data = any(by_team_cached.get(t["name"]) for t in teams)
+    knockouts_cached = cache.get("knockouts", [])
+    cache_has_data = any(by_team_cached.get(t["name"]) for t in teams) or knockouts_cached
     if not force_refresh and cache_is_fresh(cache, now) and cache_has_data:
         age_min = (now - datetime.fromisoformat(cache["fetched_at"])).total_seconds() / 60
         print(f"[cache] using cached fixtures (age {age_min:.0f} min)")
-        return by_team_cached
+        return by_team_cached, knockouts_cached
 
     print("[cache] refreshing fixtures from ESPN")
     league_cache: dict[str, tuple[str, list[dict]]] = {}
@@ -176,12 +238,22 @@ def get_fixtures(teams: list[dict], now: datetime, force_refresh: bool) -> dict:
         if fixtures:
             any_success = True
 
+    knockouts: list[dict] = []
+    if knockouts_config and knockouts_config.get("enabled", True):
+        knockouts = fetch_knockout_fixtures(knockouts_config, league_cache)
+        if knockouts:
+            any_success = True
+
     fetched_any_league = any(events for _, events in league_cache.values())
     if any_success or fetched_any_league or not cache.get("by_team"):
-        save_json(CACHE_PATH, {"fetched_at": now.isoformat(), "by_team": by_team})
-        return by_team
+        save_json(CACHE_PATH, {
+            "fetched_at": now.isoformat(),
+            "by_team": by_team,
+            "knockouts": knockouts,
+        })
+        return by_team, knockouts
     print("[cache] refresh failed, falling back to stale cache", file=sys.stderr)
-    return cache.get("by_team", {})
+    return cache.get("by_team", {}), cache.get("knockouts", [])
 
 
 def fmt_local(dt_utc: datetime) -> str:
@@ -205,92 +277,127 @@ def build_start_message(team_emoji: str, league: str, home: str, away: str) -> s
     )
 
 
+def process_fixture(
+    fx: dict,
+    emoji: str,
+    sponsor: str,
+    state: dict,
+    phone: str,
+    apikey: str,
+    now: datetime,
+) -> None:
+    fixture_id = fx["id"]
+    kickoff = datetime.fromisoformat(fx["kickoff"])
+    league = fx["league"]
+    home = fx["home"]
+    away = fx["away"]
+    minutes_until = (kickoff - now).total_seconds() / 60.0
+    print(f"  - {home} vs {away} ({league}) en {minutes_until:.0f} min")
+
+    entry = state.get(fixture_id, {
+        "kickoff": kickoff.isoformat(),
+        "team": sponsor,
+        "match": f"{home} vs {away}",
+        "league": league,
+        "pre_marks_sent": [],
+        "start_sent": False,
+    })
+    entry["kickoff"] = kickoff.isoformat()
+    # migrate from old format (single pre_sent flag)
+    if "pre_marks_sent" not in entry:
+        entry["pre_marks_sent"] = list(PRE_MATCH_MARKS) if entry.get("pre_sent") else []
+    entry.pop("pre_sent", None)
+
+    unsent_passed = [m for m in PRE_MATCH_MARKS
+                     if m not in entry["pre_marks_sent"] and 0 < minutes_until <= m]
+    if unsent_passed:
+        shown_minutes = max(int(round(minutes_until)), 1)
+        msg = build_pre_message(emoji, league, home, away, kickoff, shown_minutes)
+        try:
+            send_whatsapp(phone, apikey, msg)
+            entry["pre_marks_sent"] = sorted(set(entry["pre_marks_sent"] + unsent_passed))
+            print(f"[pre] {sponsor}: {home} vs {away} in {minutes_until:.0f} min (marks fired: {unsent_passed})")
+        except requests.RequestException as e:
+            print(f"WhatsApp send failed (pre): {e}", file=sys.stderr)
+
+    minutes_since = -minutes_until
+    if not entry["start_sent"] and 0 <= minutes_since <= START_GRACE_MINUTES:
+        msg = build_start_message(emoji, league, home, away)
+        try:
+            send_whatsapp(phone, apikey, msg)
+            entry["start_sent"] = True
+            print(f"[start] {sponsor}: {home} vs {away}")
+        except requests.RequestException as e:
+            print(f"WhatsApp send failed (start): {e}", file=sys.stderr)
+
+    state[fixture_id] = entry
+
+
 def main() -> int:
     phone = env("WHATSAPP_PHONE")
     apikey = env("WHATSAPP_APIKEY")
     test_mode = os.environ.get("TEST_MODE", "").lower() in ("1", "true", "yes")
 
-    teams = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))["teams"]
+    config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
+    teams = config.get("teams", [])
+    knockouts_config = config.get("knockouts")
+    knockouts_enabled = bool(knockouts_config and knockouts_config.get("enabled", True))
+    knockouts_emoji = (knockouts_config or {}).get("emoji", "🏆")
+
     now = datetime.now(timezone.utc)
     state = prune_state(load_json(STATE_PATH, {}), now)
 
     if test_mode:
-        print("[test] running in TEST_MODE — sending a sample message per team")
+        print("[test] running in TEST_MODE — sending a sample message per group")
 
-    fixtures_by_team = get_fixtures(teams, now, force_refresh=test_mode)
+    fixtures_by_team, knockout_fixtures = get_fixtures(teams, knockouts_config, now, force_refresh=test_mode)
 
+    groups: list[dict] = []
     for team in teams:
-        fixtures = fixtures_by_team.get(team["name"], [])
-        print(f"[fetch] {team['name']}: {len(fixtures)} upcoming fixtures")
+        groups.append({
+            "label": team["name"],
+            "emoji": team["emoji"],
+            "fixtures": fixtures_by_team.get(team["name"], []),
+        })
+    if knockouts_enabled:
+        groups.append({
+            "label": "Llaves eliminatorias",
+            "emoji": knockouts_emoji,
+            "fixtures": knockout_fixtures,
+        })
+
+    processed_ids: set[str] = set()
+    for group in groups:
+        fixtures = group["fixtures"]
+        print(f"[fetch] {group['label']}: {len(fixtures)} upcoming fixtures")
 
         if test_mode:
             if not fixtures:
                 try:
-                    send_whatsapp(phone, apikey, f"[test] {team['name']}: la API no devolvio partidos proximos")
+                    send_whatsapp(phone, apikey, f"[test] {group['label']}: la API no devolvio partidos proximos")
                 except requests.RequestException as e:
                     print(f"WhatsApp test send failed: {e}", file=sys.stderr)
                 continue
             fx = sorted(fixtures, key=lambda f: f["kickoff"])[0]
             kickoff = datetime.fromisoformat(fx["kickoff"])
             msg = (
-                f"[test] {team['emoji']} proximo partido\n"
+                f"[test] {group['emoji']} proximo partido — {group['label']}\n"
                 f"⚽ {fx['home']} vs {fx['away']}\n"
                 f"🏆 {fx['league']}\n"
                 f"🕐 {fmt_local(kickoff)} hs ({kickoff.astimezone(LOCAL_TZ).strftime('%d/%m')})"
             )
             try:
                 send_whatsapp(phone, apikey, msg)
-                print(f"[test] sent for {team['name']}")
+                print(f"[test] sent for {group['label']}")
             except requests.RequestException as e:
                 print(f"WhatsApp test send failed: {e}", file=sys.stderr)
             continue
 
         for fx in fixtures:
-            fixture_id = fx["id"]
-            kickoff = datetime.fromisoformat(fx["kickoff"])
-            league = fx["league"]
-            home = fx["home"]
-            away = fx["away"]
-            minutes_until = (kickoff - now).total_seconds() / 60.0
-            print(f"  - {home} vs {away} ({league}) en {minutes_until:.0f} min")
-
-            entry = state.get(fixture_id, {
-                "kickoff": kickoff.isoformat(),
-                "team": team["name"],
-                "match": f"{home} vs {away}",
-                "league": league,
-                "pre_marks_sent": [],
-                "start_sent": False,
-            })
-            entry["kickoff"] = kickoff.isoformat()
-            # migrate from old format (single pre_sent flag)
-            if "pre_marks_sent" not in entry:
-                entry["pre_marks_sent"] = list(PRE_MATCH_MARKS) if entry.get("pre_sent") else []
-            entry.pop("pre_sent", None)
-
-            unsent_passed = [m for m in PRE_MATCH_MARKS
-                             if m not in entry["pre_marks_sent"] and 0 < minutes_until <= m]
-            if unsent_passed:
-                shown_minutes = max(int(round(minutes_until)), 1)
-                msg = build_pre_message(team["emoji"], league, home, away, kickoff, shown_minutes)
-                try:
-                    send_whatsapp(phone, apikey, msg)
-                    entry["pre_marks_sent"] = sorted(set(entry["pre_marks_sent"] + unsent_passed))
-                    print(f"[pre] {team['name']}: {home} vs {away} in {minutes_until:.0f} min (marks fired: {unsent_passed})")
-                except requests.RequestException as e:
-                    print(f"WhatsApp send failed (pre): {e}", file=sys.stderr)
-
-            minutes_since = -minutes_until
-            if not entry["start_sent"] and 0 <= minutes_since <= START_GRACE_MINUTES:
-                msg = build_start_message(team["emoji"], league, home, away)
-                try:
-                    send_whatsapp(phone, apikey, msg)
-                    entry["start_sent"] = True
-                    print(f"[start] {team['name']}: {home} vs {away}")
-                except requests.RequestException as e:
-                    print(f"WhatsApp send failed (start): {e}", file=sys.stderr)
-
-            state[fixture_id] = entry
+            if fx["id"] in processed_ids:
+                continue
+            process_fixture(fx, group["emoji"], group["label"], state, phone, apikey, now)
+            processed_ids.add(fx["id"])
 
     if not test_mode:
         save_json(STATE_PATH, state)

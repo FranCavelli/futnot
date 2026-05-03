@@ -4,13 +4,70 @@
       "name": "Boca Juniors",
       "match": "Boca Juniors",
       "emoji": "🔵🟡",
-      "leagues": ["arg.1", "conmebol.libertadores", "conmebol.sudamericana"]
+      "leagues": ["arg.1", "conmebol.libertadores", "conmebol.sudamericana", "arg.copa"]
+    },
+    {
+      "name": "River Plate",
+      "match": "River Plate",
+      "emoji": "⚪🔴",
+      "leagues": ["arg.1", "conmebol.libertadores", "conmebol.sudamericana", "arg.copa"]
+    },
+    {
+      "name": "Racing Club",
+      "match": "Racing Club",
+      "emoji": "⚪🔵",
+      "leagues": ["arg.1", "conmebol.libertadores", "conmebol.sudamericana", "arg.copa"]
     },
     {
       "name": "FC Barcelona",
       "match": "Barcelona",
       "emoji": "🔵🔴",
-      "leagues": ["esp.1", "esp.copa_del_rey", "uefa.champions", "uefa.super_cup", "esp.super_cup"]
+      "leagues": ["esp.1", "esp.copa_del_rey", "uefa.champions", "uefa.super_cup", "esp.super_cup", "fifa.cwc"]
+    },
+    {
+      "name": "Manchester City",
+      "match": "Manchester City",
+      "emoji": "🌕💙",
+      "leagues": ["eng.1", "eng.fa", "eng.league_cup", "uefa.champions", "uefa.europa", "uefa.super_cup", "fifa.cwc"]
+    },
+    {
+      "name": "Manchester United",
+      "match": "Manchester United",
+      "emoji": "🔴😈",
+      "leagues": ["eng.1", "eng.fa", "eng.league_cup", "uefa.champions", "uefa.europa", "uefa.europa.conf"]
+    },
+    {
+      "name": "Liverpool",
+      "match": "Liverpool",
+      "emoji": "🔴🟡",
+      "leagues": ["eng.1", "eng.fa", "eng.league_cup", "uefa.champions", "uefa.europa"]
+    },
+    {
+      "name": "Chelsea",
+      "match": "Chelsea",
+      "emoji": "🔵⚓",
+      "leagues": ["eng.1", "eng.fa", "eng.league_cup", "uefa.champions", "uefa.europa", "uefa.europa.conf", "uefa.super_cup", "fifa.cwc"]
     }
-  ]
+  ],
+  "knockouts": {
+    "enabled": true,
+    "emoji": "🏆",
+    "leagues": [
+      "uefa.champions",
+      "uefa.europa",
+      "uefa.europa.conf",
+      "uefa.super_cup",
+      "conmebol.libertadores",
+      "conmebol.sudamericana",
+      "esp.copa_del_rey",
+      "eng.fa",
+      "eng.league_cup",
+      "ita.coppa_italia",
+      "fra.coupe_de_france",
+      "ger.dfb_pokal",
+      "arg.copa",
+      "fifa.cwc",
+      "fifa.world"
+    ]
+  }
 }

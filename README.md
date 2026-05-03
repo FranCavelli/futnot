@@ -1,8 +1,8 @@
 # futnot
 
-Bot que te avisa por WhatsApp **30 minutos antes** y al **comienzo** de los partidos de los equipos que elijas. Corre 100% gratis en GitHub Actions.
+Bot que te avisa por WhatsApp **antes** (60/45/30/15 min) y al **comienzo** de los partidos de los equipos que elijas. Corre 100% gratis en GitHub Actions.
 
-Por default está configurado con **Boca Juniors** y **FC Barcelona** en todas sus competencias oficiales (liga, copas nacionales e internacionales).
+Por default está configurado con **Boca**, **River**, **Racing**, **Barcelona**, **Manchester City**, **Manchester United**, **Liverpool** y **Chelsea** en todas sus competencias oficiales, más todos los partidos de **octavos, cuartos, semis y finales** de las copas grandes de Europa, Sudamérica y Argentina (aunque no juegue ninguno de esos equipos).
 
 ---
 
@@ -69,12 +69,24 @@ A partir de ahí el cron corre solo cada 5 minutos.
 
 ## 5. Cambiar/agregar equipos
 
-Editá `config/teams.json`. Cada equipo tiene:
+Editá `config/teams.json`. El archivo tiene dos secciones: `teams` (equipos a seguir en sus competencias) y `knockouts` (partidos de fase final de copas importantes, sin importar quién juegue).
+
+### `teams`
+
+Cada equipo tiene:
 
 - `name`: nombre para mostrar
 - `match`: substring para identificar al equipo en los partidos (case-insensitive). Ej: `"Boca Juniors"` matchea "Boca Juniors", "Boca" matchea cualquier equipo con "Boca" en el nombre.
 - `emoji`: emoji opcional para los mensajes
 - `leagues`: lista de slugs de competiciones de ESPN donde sigue al equipo
+
+### `knockouts`
+
+Notifica todos los partidos de **octavos, cuartos, semis y finales** en las copas listadas, aunque no juegue un equipo de `teams`. Si un partido también está cubierto por un equipo seguido, se manda una sola vez.
+
+- `enabled`: `true`/`false` para activar o desactivar la sección
+- `emoji`: emoji para los mensajes de partidos sin equipo asociado
+- `leagues`: lista de slugs de competiciones a vigilar en fase final
 
 Slugs comunes de ESPN:
 
@@ -89,40 +101,20 @@ Slugs comunes de ESPN:
 | Supercopa de España        | `esp.super_cup`            |
 | Champions League           | `uefa.champions`           |
 | Europa League              | `uefa.europa`              |
+| Conference League          | `uefa.europa.conf`         |
 | UEFA Super Cup             | `uefa.super_cup`           |
 | Premier League             | `eng.1`                    |
+| FA Cup                     | `eng.fa`                   |
+| EFL Cup (Carabao)          | `eng.league_cup`           |
 | Serie A (Italia)           | `ita.1`                    |
+| Coppa Italia               | `ita.coppa_italia`         |
 | Bundesliga                 | `ger.1`                    |
+| DFB-Pokal                  | `ger.dfb_pokal`            |
 | Ligue 1                    | `fra.1`                    |
+| Coupe de France            | `fra.coupe_de_france`      |
 | Brasileirão Série A        | `bra.1`                    |
 | Mundial de Clubes          | `fifa.cwc`                 |
-
-Ejemplo agregando River:
-
-```json
-{
-  "teams": [
-    {
-      "name": "Boca Juniors",
-      "match": "Boca Juniors",
-      "emoji": "🔵🟡",
-      "leagues": ["arg.1", "conmebol.libertadores", "conmebol.sudamericana"]
-    },
-    {
-      "name": "FC Barcelona",
-      "match": "Barcelona",
-      "emoji": "🔵🔴",
-      "leagues": ["esp.1", "esp.copa_del_rey", "uefa.champions"]
-    },
-    {
-      "name": "River Plate",
-      "match": "River Plate",
-      "emoji": "⚪🔴",
-      "leagues": ["arg.1", "conmebol.libertadores"]
-    }
-  ]
-}
-```
+| Mundial (selecciones)      | `fifa.world`               |
 
 Hacé `git push` y listo.
 
