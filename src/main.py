@@ -62,20 +62,25 @@ def fetch_league_events(league_slug: str) -> tuple[str, list[dict]]:
     return name, body.get("events", []) or []
 
 
+def _as_dict(v) -> dict:
+    return v if isinstance(v, dict) else {}
+
+
 def detect_stage(ev: dict) -> tuple[str | None, str | None]:
     """Return (stage_key, stage_label_es) if this event is part of a knockout round."""
     comp = (ev.get("competitions") or [{}])[0]
     parts: list[str] = []
     for note in comp.get("notes") or []:
+        note_d = _as_dict(note)
         for k in ("headline", "type"):
-            if note.get(k):
-                parts.append(str(note[k]))
-    season_type = (ev.get("season") or {}).get("type") or {}
+            if note_d.get(k):
+                parts.append(str(note_d[k]))
+    season_type = _as_dict(_as_dict(ev.get("season")).get("type"))
     if season_type.get("name"):
         parts.append(str(season_type["name"]))
-    status_desc = ((comp.get("status") or {}).get("type") or {}).get("description")
-    if status_desc:
-        parts.append(str(status_desc))
+    status_type = _as_dict(_as_dict(comp.get("status")).get("type"))
+    if status_type.get("description"):
+        parts.append(str(status_type["description"]))
     if ev.get("name"):
         parts.append(str(ev["name"]))
     text = " ".join(parts).lower()
@@ -97,13 +102,13 @@ def detect_stage(ev: dict) -> tuple[str | None, str | None]:
 def extract_fixture(ev: dict, league_name: str) -> dict | None:
     comp = (ev.get("competitions") or [{}])[0]
     competitors = comp.get("competitors", []) or []
-    home = next((c for c in competitors if c.get("homeAway") == "home"), {})
-    away = next((c for c in competitors if c.get("homeAway") == "away"), {})
-    home_name = (home.get("team") or {}).get("displayName", "")
-    away_name = (away.get("team") or {}).get("displayName", "")
+    home = next((c for c in competitors if _as_dict(c).get("homeAway") == "home"), {})
+    away = next((c for c in competitors if _as_dict(c).get("homeAway") == "away"), {})
+    home_name = _as_dict(_as_dict(home).get("team")).get("displayName", "")
+    away_name = _as_dict(_as_dict(away).get("team")).get("displayName", "")
     if not home_name or not away_name:
         return None
-    state = (((ev.get("status") or {}).get("type") or {}).get("state", ""))
+    state = _as_dict(_as_dict(ev.get("status")).get("type")).get("state", "")
     if state == "post":   # finished
         return None
     raw_date = ev.get("date")
