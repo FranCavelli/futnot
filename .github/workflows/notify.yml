@@ -3,6 +3,8 @@ name: notify
 on:
   schedule:
     - cron: "*/5 * * * *"
+  repository_dispatch:
+    types: [notify]
   workflow_dispatch:
     inputs:
       test_mode:
