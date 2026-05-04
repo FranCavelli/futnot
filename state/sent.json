@@ -98,6 +98,7 @@
     "match": "Everton vs Manchester City",
     "league": "English Premier League",
     "pre_marks_sent": [
+      30,
       45,
       60
     ],
