@@ -16,7 +16,7 @@ CACHE_PATH = ROOT / "state" / "fixtures_cache.json"
 ESPN_BASE = "https://site.api.espn.com/apis/site/v2/sports/soccer"
 CALLMEBOT_URL = "https://api.callmebot.com/whatsapp.php"
 
-PRE_MATCH_MARKS = [60, 45, 30, 15]   # minutes before kickoff to remind, largest first
+PRE_MATCH_MARKS = [60, 30]   # minutes before kickoff to remind, largest first
 START_GRACE_MINUTES = 60
 STATE_RETENTION_DAYS = 3
 CACHE_TTL_HOURS = 6
