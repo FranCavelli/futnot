@@ -97,7 +97,10 @@
     "team": "Manchester City",
     "match": "Everton vs Manchester City",
     "league": "English Premier League",
-    "pre_marks_sent": [],
+    "pre_marks_sent": [
+      45,
+      60
+    ],
     "start_sent": false
   },
   "740951": {
@@ -161,6 +164,30 @@
     "team": "Chelsea",
     "match": "Chelsea vs Nottingham Forest",
     "league": "English Premier League",
+    "pre_marks_sent": [],
+    "start_sent": false
+  },
+  "401871437": {
+    "kickoff": "2026-05-10T18:00:00+00:00",
+    "team": "Boca Juniors",
+    "match": "Boca Juniors vs TBD",
+    "league": "Argentine Liga Profesional de Fútbol",
+    "pre_marks_sent": [],
+    "start_sent": false
+  },
+  "401871430": {
+    "kickoff": "2026-05-10T18:00:00+00:00",
+    "team": "River Plate",
+    "match": "River Plate vs TBD",
+    "league": "Argentine Liga Profesional de Fútbol",
+    "pre_marks_sent": [],
+    "start_sent": false
+  },
+  "401871434": {
+    "kickoff": "2026-05-10T18:00:00+00:00",
+    "team": "Racing Club",
+    "match": "Estudiantes de La Plata vs Racing Club",
+    "league": "Argentine Liga Profesional de Fútbol",
     "pre_marks_sent": [],
     "start_sent": false
   }

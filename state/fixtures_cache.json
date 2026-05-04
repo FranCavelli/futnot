@@ -1,7 +1,15 @@
 {
-  "fetched_at": "2026-05-04T11:12:08.341751+00:00",
+  "fetched_at": "2026-05-04T17:15:31.334997+00:00",
   "by_team": {
     "Boca Juniors": [
+      {
+        "id": "401871437",
+        "kickoff": "2026-05-10T18:00:00+00:00",
+        "league": "Argentine Liga Profesional de Fútbol",
+        "stage_key": null,
+        "home": "Boca Juniors",
+        "away": "TBD"
+      },
       {
         "id": "401865522",
         "kickoff": "2026-05-06T00:00:00+00:00",
@@ -13,6 +21,14 @@
     ],
     "River Plate": [
       {
+        "id": "401871430",
+        "kickoff": "2026-05-10T18:00:00+00:00",
+        "league": "Argentine Liga Profesional de Fútbol",
+        "stage_key": null,
+        "home": "River Plate",
+        "away": "TBD"
+      },
+      {
         "id": "401865426",
         "kickoff": "2026-05-08T00:30:00+00:00",
         "league": "CONMEBOL Sudamericana",
@@ -22,6 +38,14 @@
       }
     ],
     "Racing Club": [
+      {
+        "id": "401871434",
+        "kickoff": "2026-05-10T18:00:00+00:00",
+        "league": "Argentine Liga Profesional de Fútbol",
+        "stage_key": null,
+        "home": "Estudiantes de La Plata",
+        "away": "Racing Club"
+      },
       {
         "id": "401865419",
         "kickoff": "2026-05-07T00:30:00+00:00",
@@ -128,14 +152,6 @@
       }
     ],
     "Chelsea": [
-      {
-        "id": "740940",
-        "kickoff": "2026-05-04T14:00:00+00:00",
-        "league": "English Premier League",
-        "stage_key": null,
-        "home": "Chelsea",
-        "away": "Nottingham Forest"
-      },
       {
         "id": "740950",
         "kickoff": "2026-05-09T11:30:00+00:00",
