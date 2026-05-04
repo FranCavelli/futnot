@@ -1,14 +1,14 @@
 {
-  "fetched_at": "2026-05-04T17:15:31.334997+00:00",
+  "fetched_at": "2026-05-04T23:20:22.847853+00:00",
   "by_team": {
     "Boca Juniors": [
       {
         "id": "401871437",
-        "kickoff": "2026-05-10T18:00:00+00:00",
+        "kickoff": "2026-05-09T18:00:00+00:00",
         "league": "Argentine Liga Profesional de Fútbol",
         "stage_key": null,
         "home": "Boca Juniors",
-        "away": "TBD"
+        "away": "Huracán"
       },
       {
         "id": "401865522",
@@ -26,7 +26,7 @@
         "league": "Argentine Liga Profesional de Fútbol",
         "stage_key": null,
         "home": "River Plate",
-        "away": "TBD"
+        "away": "San Lorenzo"
       },
       {
         "id": "401865426",
@@ -82,14 +82,6 @@
       }
     ],
     "Manchester City": [
-      {
-        "id": "740941",
-        "kickoff": "2026-05-04T19:00:00+00:00",
-        "league": "English Premier League",
-        "stage_key": null,
-        "home": "Everton",
-        "away": "Manchester City"
-      },
       {
         "id": "740951",
         "kickoff": "2026-05-09T16:30:00+00:00",
