@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-05-03T18:42:46.824835+00:00",
+  "fetched_at": "2026-05-04T03:54:00.649337+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -13,14 +13,6 @@
     ],
     "River Plate": [
       {
-        "id": "762899",
-        "kickoff": "2026-05-03T21:30:00+00:00",
-        "league": "Argentine Liga Profesional de Fútbol",
-        "stage_key": null,
-        "home": "River Plate",
-        "away": "Atlético Tucumán"
-      },
-      {
         "id": "401865426",
         "kickoff": "2026-05-08T00:30:00+00:00",
         "league": "CONMEBOL Sudamericana",
@@ -30,14 +22,6 @@
       }
     ],
     "Racing Club": [
-      {
-        "id": "762898",
-        "kickoff": "2026-05-03T19:00:00+00:00",
-        "league": "Argentine Liga Profesional de Fútbol",
-        "stage_key": null,
-        "home": "Racing Club",
-        "away": "Huracán"
-      },
       {
         "id": "401865419",
         "kickoff": "2026-05-07T00:30:00+00:00",
