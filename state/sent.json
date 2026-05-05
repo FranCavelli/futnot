@@ -20,19 +20,6 @@
     "start_sent": false,
     "pre_marks_sent": []
   },
-  "748480": {
-    "kickoff": "2026-05-02T19:00:00+00:00",
-    "team": "FC Barcelona",
-    "match": "Osasuna vs Barcelona",
-    "league": "Spanish LALIGA",
-    "start_sent": true,
-    "pre_marks_sent": [
-      60,
-      45,
-      30,
-      15
-    ]
-  },
   "748484": {
     "kickoff": "2026-05-10T19:00:00+00:00",
     "team": "FC Barcelona",
