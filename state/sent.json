@@ -5,7 +5,9 @@
     "match": "Barcelona SC vs Boca Juniors",
     "league": "CONMEBOL Libertadores",
     "start_sent": false,
-    "pre_marks_sent": []
+    "pre_marks_sent": [
+      60
+    ]
   },
   "748484": {
     "kickoff": "2026-05-10T19:00:00+00:00",
