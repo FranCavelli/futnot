@@ -169,7 +169,7 @@
     "start_sent": false
   },
   "401871437": {
-    "kickoff": "2026-05-09T18:00:00+00:00",
+    "kickoff": "2026-05-09T22:00:00+00:00",
     "team": "Boca Juniors",
     "match": "Boca Juniors vs TBD",
     "league": "Argentine Liga Profesional de Fútbol",
@@ -177,7 +177,7 @@
     "start_sent": false
   },
   "401871430": {
-    "kickoff": "2026-05-10T18:00:00+00:00",
+    "kickoff": "2026-05-10T22:00:00+00:00",
     "team": "River Plate",
     "match": "River Plate vs TBD",
     "league": "Argentine Liga Profesional de Fútbol",
@@ -185,10 +185,34 @@
     "start_sent": false
   },
   "401871434": {
-    "kickoff": "2026-05-10T18:00:00+00:00",
+    "kickoff": "2026-05-10T20:00:00+00:00",
     "team": "Racing Club",
     "match": "Estudiantes de La Plata vs Racing Club",
     "league": "Argentine Liga Profesional de Fútbol",
+    "pre_marks_sent": [],
+    "start_sent": false
+  },
+  "401865538": {
+    "kickoff": "2026-05-20T00:30:00+00:00",
+    "team": "Boca Juniors",
+    "match": "Boca Juniors vs Cruzeiro",
+    "league": "CONMEBOL Libertadores",
+    "pre_marks_sent": [],
+    "start_sent": false
+  },
+  "740958": {
+    "kickoff": "2026-05-19T18:30:00+00:00",
+    "team": "Manchester City",
+    "match": "AFC Bournemouth vs Manchester City",
+    "league": "English Premier League",
+    "pre_marks_sent": [],
+    "start_sent": false
+  },
+  "740960": {
+    "kickoff": "2026-05-19T19:15:00+00:00",
+    "team": "Chelsea",
+    "match": "Chelsea vs Tottenham Hotspur",
+    "league": "English Premier League",
     "pre_marks_sent": [],
     "start_sent": false
   }

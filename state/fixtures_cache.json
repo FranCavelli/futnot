@@ -1,10 +1,10 @@
 {
-  "fetched_at": "2026-05-04T23:20:22.847853+00:00",
+  "fetched_at": "2026-05-05T05:20:28.384314+00:00",
   "by_team": {
     "Boca Juniors": [
       {
         "id": "401871437",
-        "kickoff": "2026-05-09T18:00:00+00:00",
+        "kickoff": "2026-05-09T22:00:00+00:00",
         "league": "Argentine Liga Profesional de Fútbol",
         "stage_key": null,
         "home": "Boca Juniors",
@@ -17,12 +17,20 @@
         "stage_key": null,
         "home": "Barcelona SC",
         "away": "Boca Juniors"
+      },
+      {
+        "id": "401865538",
+        "kickoff": "2026-05-20T00:30:00+00:00",
+        "league": "CONMEBOL Libertadores",
+        "stage_key": null,
+        "home": "Boca Juniors",
+        "away": "Cruzeiro"
       }
     ],
     "River Plate": [
       {
         "id": "401871430",
-        "kickoff": "2026-05-10T18:00:00+00:00",
+        "kickoff": "2026-05-10T22:00:00+00:00",
         "league": "Argentine Liga Profesional de Fútbol",
         "stage_key": null,
         "home": "River Plate",
@@ -40,7 +48,7 @@
     "Racing Club": [
       {
         "id": "401871434",
-        "kickoff": "2026-05-10T18:00:00+00:00",
+        "kickoff": "2026-05-10T20:00:00+00:00",
         "league": "Argentine Liga Profesional de Fútbol",
         "stage_key": null,
         "home": "Estudiantes de La Plata",
@@ -99,6 +107,14 @@
         "away": "Crystal Palace"
       },
       {
+        "id": "740958",
+        "kickoff": "2026-05-19T18:30:00+00:00",
+        "league": "English Premier League",
+        "stage_key": null,
+        "home": "AFC Bournemouth",
+        "away": "Manchester City"
+      },
+      {
         "id": "401867655",
         "kickoff": "2026-05-16T14:00:00+00:00",
         "league": "English FA Cup",
@@ -151,6 +167,14 @@
         "stage_key": null,
         "home": "Liverpool",
         "away": "Chelsea"
+      },
+      {
+        "id": "740960",
+        "kickoff": "2026-05-19T19:15:00+00:00",
+        "league": "English Premier League",
+        "stage_key": null,
+        "home": "Chelsea",
+        "away": "Tottenham Hotspur"
       },
       {
         "id": "401867655",
