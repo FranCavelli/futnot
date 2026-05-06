@@ -192,5 +192,21 @@
     "league": "English Premier League",
     "pre_marks_sent": [],
     "start_sent": false
+  },
+  "401865445": {
+    "kickoff": "2026-05-21T00:30:00+00:00",
+    "team": "River Plate",
+    "match": "River Plate vs Red Bull Bragantino",
+    "league": "CONMEBOL Sudamericana",
+    "pre_marks_sent": [],
+    "start_sent": false
+  },
+  "401862911": {
+    "kickoff": "2026-05-20T19:00:00+00:00",
+    "team": "Llaves eliminatorias",
+    "match": "Semifinal 1 Winner vs Semifinal 2 Winner",
+    "league": "UEFA Europa League — Semifinal",
+    "pre_marks_sent": [],
+    "start_sent": false
   }
 }
