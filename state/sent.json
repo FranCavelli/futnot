@@ -39,7 +39,9 @@
     "team": "River Plate",
     "match": "Carabobo vs River Plate",
     "league": "CONMEBOL Sudamericana",
-    "pre_marks_sent": [],
+    "pre_marks_sent": [
+      60
+    ],
     "start_sent": false
   },
   "401865419": {
