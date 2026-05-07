@@ -192,5 +192,13 @@
     "league": "UEFA Europa League — Semifinal",
     "pre_marks_sent": [],
     "start_sent": false
+  },
+  "401865446": {
+    "kickoff": "2026-05-22T00:00:00+00:00",
+    "team": "Racing Club",
+    "match": "Racing Club vs Caracas FC",
+    "league": "CONMEBOL Sudamericana",
+    "pre_marks_sent": [],
+    "start_sent": false
   }
 }

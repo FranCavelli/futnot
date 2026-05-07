@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-05-06T23:40:28.948582+00:00",
+  "fetched_at": "2026-05-07T05:45:30.947795+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -55,12 +55,12 @@
         "away": "Racing Club"
       },
       {
-        "id": "401865419",
-        "kickoff": "2026-05-07T00:30:00+00:00",
+        "id": "401865446",
+        "kickoff": "2026-05-22T00:00:00+00:00",
         "league": "CONMEBOL Sudamericana",
         "stage_key": null,
-        "home": "Botafogo",
-        "away": "Racing Club"
+        "home": "Racing Club",
+        "away": "Caracas FC"
       }
     ],
     "FC Barcelona": [
