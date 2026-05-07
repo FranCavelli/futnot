@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-05-07T17:50:29.873908+00:00",
+  "fetched_at": "2026-05-07T23:55:19.335917+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -152,7 +152,7 @@
       },
       {
         "id": "740957",
-        "kickoff": "2026-05-17T11:30:00+00:00",
+        "kickoff": "2026-05-15T19:00:00+00:00",
         "league": "English Premier League",
         "stage_key": null,
         "home": "Aston Villa",
@@ -186,14 +186,5 @@
       }
     ]
   },
-  "knockouts": [
-    {
-      "id": "401862911",
-      "kickoff": "2026-05-20T19:00:00+00:00",
-      "league": "UEFA Europa League — Semifinal",
-      "stage_key": "semifinal",
-      "home": "Semifinal 1 Winner",
-      "away": "Semifinal 2 Winner"
-    }
-  ]
+  "knockouts": []
 }
