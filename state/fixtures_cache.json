@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-05-07T23:55:19.335917+00:00",
+  "fetched_at": "2026-05-08T05:55:25.445304+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -27,14 +27,6 @@
         "stage_key": null,
         "home": "River Plate",
         "away": "San Lorenzo"
-      },
-      {
-        "id": "401865426",
-        "kickoff": "2026-05-08T00:30:00+00:00",
-        "league": "CONMEBOL Sudamericana",
-        "stage_key": null,
-        "home": "Carabobo",
-        "away": "River Plate"
       },
       {
         "id": "401865445",
