@@ -90,7 +90,9 @@
     "team": "Liverpool",
     "match": "Liverpool vs Chelsea",
     "league": "English Premier League",
-    "pre_marks_sent": [],
+    "pre_marks_sent": [
+      60
+    ],
     "start_sent": false
   },
   "740957": {
