@@ -50,7 +50,9 @@
     "team": "Manchester City",
     "match": "Manchester City vs Brentford",
     "league": "English Premier League",
-    "pre_marks_sent": [],
+    "pre_marks_sent": [
+      60
+    ],
     "start_sent": false
   },
   "740902": {
