@@ -4,7 +4,7 @@
     "team": "FC Barcelona",
     "match": "Barcelona vs Real Madrid",
     "league": "Spanish LALIGA",
-    "start_sent": false,
+    "start_sent": true,
     "pre_marks_sent": [
       30,
       60
@@ -126,7 +126,9 @@
     "team": "Racing Club",
     "match": "Estudiantes de La Plata vs Racing Club",
     "league": "Argentine Liga Profesional de Fútbol",
-    "pre_marks_sent": [],
+    "pre_marks_sent": [
+      60
+    ],
     "start_sent": false
   },
   "401865538": {
