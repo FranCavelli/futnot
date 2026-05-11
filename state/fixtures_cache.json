@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-05-11T00:40:23.946201+00:00",
+  "fetched_at": "2026-05-11T06:45:28.895003+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -22,6 +22,14 @@
       }
     ],
     "Racing Club": [
+      {
+        "id": "401872179",
+        "kickoff": "2026-05-13T22:00:00+00:00",
+        "league": "Argentine Liga Profesional de Fútbol",
+        "stage_key": null,
+        "home": "Rosario Central",
+        "away": "Racing Club"
+      },
       {
         "id": "401865446",
         "kickoff": "2026-05-22T00:00:00+00:00",
