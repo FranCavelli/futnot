@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-05-10T18:40:21.796396+00:00",
+  "fetched_at": "2026-05-11T00:40:23.946201+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -13,14 +13,6 @@
     ],
     "River Plate": [
       {
-        "id": "401871430",
-        "kickoff": "2026-05-10T22:00:00+00:00",
-        "league": "Argentine Liga Profesional de Fútbol",
-        "stage_key": null,
-        "home": "River Plate",
-        "away": "San Lorenzo"
-      },
-      {
         "id": "401865445",
         "kickoff": "2026-05-21T00:30:00+00:00",
         "league": "CONMEBOL Sudamericana",
@@ -31,14 +23,6 @@
     ],
     "Racing Club": [
       {
-        "id": "401871434",
-        "kickoff": "2026-05-10T20:00:00+00:00",
-        "league": "Argentine Liga Profesional de Fútbol",
-        "stage_key": null,
-        "home": "Estudiantes de La Plata",
-        "away": "Racing Club"
-      },
-      {
         "id": "401865446",
         "kickoff": "2026-05-22T00:00:00+00:00",
         "league": "CONMEBOL Sudamericana",
@@ -48,14 +32,6 @@
       }
     ],
     "FC Barcelona": [
-      {
-        "id": "748484",
-        "kickoff": "2026-05-10T19:00:00+00:00",
-        "league": "Spanish LALIGA",
-        "stage_key": null,
-        "home": "Barcelona",
-        "away": "Real Madrid"
-      },
       {
         "id": "748498",
         "kickoff": "2026-05-13T19:30:00+00:00",
