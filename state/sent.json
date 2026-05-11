@@ -173,7 +173,7 @@
     "start_sent": false
   },
   "748519": {
-    "kickoff": "2026-05-24T18:00:00+00:00",
+    "kickoff": "2026-05-23T19:00:00+00:00",
     "team": "FC Barcelona",
     "match": "Valencia vs Barcelona",
     "league": "Spanish LALIGA",
@@ -216,6 +216,14 @@
     "kickoff": "2026-05-13T22:00:00+00:00",
     "team": "Racing Club",
     "match": "Rosario Central vs Racing Club",
+    "league": "Argentine Liga Profesional de Fútbol",
+    "pre_marks_sent": [],
+    "start_sent": false
+  },
+  "401872546": {
+    "kickoff": "2026-05-14T00:30:00+00:00",
+    "team": "River Plate",
+    "match": "River Plate vs Gimnasia La Plata",
     "league": "Argentine Liga Profesional de Fútbol",
     "pre_marks_sent": [],
     "start_sent": false
