@@ -53,17 +53,6 @@
     "pre_marks_sent": [],
     "start_sent": false
   },
-  "740953": {
-    "kickoff": "2026-05-09T14:00:00+00:00",
-    "team": "Manchester United",
-    "match": "Sunderland vs Manchester United",
-    "league": "English Premier League",
-    "pre_marks_sent": [
-      30,
-      60
-    ],
-    "start_sent": true
-  },
   "740963": {
     "kickoff": "2026-05-17T11:30:00+00:00",
     "team": "Manchester United",
