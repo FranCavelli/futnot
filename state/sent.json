@@ -58,17 +58,6 @@
     "pre_marks_sent": [],
     "start_sent": false
   },
-  "401871437": {
-    "kickoff": "2026-05-09T22:00:00+00:00",
-    "team": "Boca Juniors",
-    "match": "Boca Juniors vs TBD",
-    "league": "Argentine Liga Profesional de Fútbol",
-    "pre_marks_sent": [
-      30,
-      60
-    ],
-    "start_sent": true
-  },
   "401871430": {
     "kickoff": "2026-05-10T22:00:00+00:00",
     "team": "River Plate",
