@@ -183,5 +183,21 @@
     "league": "Argentine Liga Profesional de Fútbol",
     "pre_marks_sent": [],
     "start_sent": false
+  },
+  "401865462": {
+    "kickoff": "2026-05-28T00:30:00+00:00",
+    "team": "River Plate",
+    "match": "River Plate vs Blooming",
+    "league": "CONMEBOL Sudamericana",
+    "pre_marks_sent": [],
+    "start_sent": false
+  },
+  "401865463": {
+    "kickoff": "2026-05-27T22:00:00+00:00",
+    "team": "Racing Club",
+    "match": "Racing Club vs Independiente Petrolero",
+    "league": "CONMEBOL Sudamericana",
+    "pre_marks_sent": [],
+    "start_sent": false
   }
 }

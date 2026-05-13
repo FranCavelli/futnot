@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-05-12T18:55:18.931722+00:00",
+  "fetched_at": "2026-05-13T00:55:23.607077+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -27,6 +27,14 @@
         "stage_key": null,
         "home": "River Plate",
         "away": "Red Bull Bragantino"
+      },
+      {
+        "id": "401865462",
+        "kickoff": "2026-05-28T00:30:00+00:00",
+        "league": "CONMEBOL Sudamericana",
+        "stage_key": null,
+        "home": "River Plate",
+        "away": "Blooming"
       }
     ],
     "Racing Club": [
@@ -45,6 +53,14 @@
         "stage_key": null,
         "home": "Racing Club",
         "away": "Caracas FC"
+      },
+      {
+        "id": "401865463",
+        "kickoff": "2026-05-27T22:00:00+00:00",
+        "league": "CONMEBOL Sudamericana",
+        "stage_key": null,
+        "home": "Racing Club",
+        "away": "Independiente Petrolero"
       }
     ],
     "FC Barcelona": [
