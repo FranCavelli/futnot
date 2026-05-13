@@ -16,7 +16,9 @@
     "match": "Alavés vs Barcelona",
     "league": "Spanish LALIGA",
     "start_sent": false,
-    "pre_marks_sent": []
+    "pre_marks_sent": [
+      60
+    ]
   },
   "748508": {
     "kickoff": "2026-05-17T19:15:00+00:00",
@@ -32,6 +34,7 @@
     "match": "Manchester City vs Crystal Palace",
     "league": "English Premier League",
     "pre_marks_sent": [
+      30,
       60
     ],
     "start_sent": false
