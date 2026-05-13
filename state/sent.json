@@ -1,15 +1,4 @@
 {
-  "748484": {
-    "kickoff": "2026-05-10T19:00:00+00:00",
-    "team": "FC Barcelona",
-    "match": "Barcelona vs Real Madrid",
-    "league": "Spanish LALIGA",
-    "start_sent": true,
-    "pre_marks_sent": [
-      30,
-      60
-    ]
-  },
   "748498": {
     "kickoff": "2026-05-13T19:30:00+00:00",
     "team": "FC Barcelona",
@@ -17,6 +6,7 @@
     "league": "Spanish LALIGA",
     "start_sent": false,
     "pre_marks_sent": [
+      30,
       60
     ]
   },
@@ -37,7 +27,7 @@
       30,
       60
     ],
-    "start_sent": false
+    "start_sent": true
   },
   "401867655": {
     "kickoff": "2026-05-16T14:00:00+00:00",
