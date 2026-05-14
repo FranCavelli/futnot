@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-05-14T01:10:26.357145+00:00",
+  "fetched_at": "2026-05-14T07:15:26.704038+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -20,6 +20,14 @@
       }
     ],
     "River Plate": [
+      {
+        "id": "401872650",
+        "kickoff": "2026-05-17T18:00:00+00:00",
+        "league": "Argentine Liga Profesional de Fútbol",
+        "stage_key": null,
+        "home": "River Plate",
+        "away": "Rosario Central"
+      },
       {
         "id": "401865445",
         "kickoff": "2026-05-21T00:30:00+00:00",
