@@ -178,5 +178,13 @@
     "league": "CONMEBOL Sudamericana",
     "pre_marks_sent": [],
     "start_sent": false
+  },
+  "401865549": {
+    "kickoff": "2026-05-29T00:30:00+00:00",
+    "team": "Boca Juniors",
+    "match": "Boca Juniors vs Universidad Católica",
+    "league": "CONMEBOL Libertadores",
+    "pre_marks_sent": [],
+    "start_sent": false
   }
 }

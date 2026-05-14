@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-05-13T19:05:26.794631+00:00",
+  "fetched_at": "2026-05-14T01:10:26.357145+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -9,17 +9,17 @@
         "stage_key": null,
         "home": "Boca Juniors",
         "away": "Cruzeiro"
+      },
+      {
+        "id": "401865549",
+        "kickoff": "2026-05-29T00:30:00+00:00",
+        "league": "CONMEBOL Libertadores",
+        "stage_key": null,
+        "home": "Boca Juniors",
+        "away": "Universidad Católica"
       }
     ],
     "River Plate": [
-      {
-        "id": "401872546",
-        "kickoff": "2026-05-14T00:30:00+00:00",
-        "league": "Argentine Liga Profesional de Fútbol",
-        "stage_key": null,
-        "home": "River Plate",
-        "away": "Gimnasia La Plata"
-      },
       {
         "id": "401865445",
         "kickoff": "2026-05-21T00:30:00+00:00",
@@ -39,14 +39,6 @@
     ],
     "Racing Club": [
       {
-        "id": "401872179",
-        "kickoff": "2026-05-13T21:45:00+00:00",
-        "league": "Argentine Liga Profesional de Fútbol",
-        "stage_key": null,
-        "home": "Rosario Central",
-        "away": "Racing Club"
-      },
-      {
         "id": "401865446",
         "kickoff": "2026-05-22T00:00:00+00:00",
         "league": "CONMEBOL Sudamericana",
@@ -65,14 +57,6 @@
     ],
     "FC Barcelona": [
       {
-        "id": "748498",
-        "kickoff": "2026-05-13T19:30:00+00:00",
-        "league": "Spanish LALIGA",
-        "stage_key": null,
-        "home": "Alavés",
-        "away": "Barcelona"
-      },
-      {
         "id": "748508",
         "kickoff": "2026-05-17T19:15:00+00:00",
         "league": "Spanish LALIGA",
@@ -90,14 +74,6 @@
       }
     ],
     "Manchester City": [
-      {
-        "id": "740902",
-        "kickoff": "2026-05-13T19:00:00+00:00",
-        "league": "English Premier League",
-        "stage_key": null,
-        "home": "Manchester City",
-        "away": "Crystal Palace"
-      },
       {
         "id": "740958",
         "kickoff": "2026-05-19T18:30:00+00:00",
