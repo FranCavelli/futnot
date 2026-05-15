@@ -51,6 +51,7 @@
     "match": "Aston Villa vs Liverpool",
     "league": "English Premier League",
     "pre_marks_sent": [
+      30,
       60
     ],
     "start_sent": false
