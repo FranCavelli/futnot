@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-05-16T13:35:19.650422+00:00",
+  "fetched_at": "2026-05-16T19:40:26.503724+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -97,14 +97,6 @@
         "stage_key": null,
         "home": "Manchester City",
         "away": "Aston Villa"
-      },
-      {
-        "id": "401867655",
-        "kickoff": "2026-05-16T14:00:00+00:00",
-        "league": "English FA Cup",
-        "stage_key": null,
-        "home": "Chelsea",
-        "away": "Manchester City"
       }
     ],
     "Manchester United": [
@@ -151,14 +143,6 @@
         "stage_key": null,
         "home": "Sunderland",
         "away": "Chelsea"
-      },
-      {
-        "id": "401867655",
-        "kickoff": "2026-05-16T14:00:00+00:00",
-        "league": "English FA Cup",
-        "stage_key": null,
-        "home": "Chelsea",
-        "away": "Manchester City"
       }
     ]
   },
