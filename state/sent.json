@@ -35,6 +35,7 @@
     "match": "Chelsea vs Manchester City",
     "league": "English FA Cup",
     "pre_marks_sent": [
+      30,
       60
     ],
     "start_sent": false
