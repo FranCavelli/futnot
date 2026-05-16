@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-05-15T19:30:40.428880+00:00",
+  "fetched_at": "2026-05-16T01:35:17.297371+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -126,14 +126,6 @@
       }
     ],
     "Liverpool": [
-      {
-        "id": "740957",
-        "kickoff": "2026-05-15T19:00:00+00:00",
-        "league": "English Premier League",
-        "stage_key": null,
-        "home": "Aston Villa",
-        "away": "Liverpool"
-      },
       {
         "id": "740975",
         "kickoff": "2026-05-24T15:00:00+00:00",
