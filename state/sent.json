@@ -5,6 +5,7 @@
     "match": "Barcelona vs Real Betis",
     "league": "Spanish LALIGA",
     "pre_marks_sent": [
+      30,
       60
     ],
     "start_sent": false
