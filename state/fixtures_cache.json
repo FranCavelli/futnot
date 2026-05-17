@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-05-17T07:45:23.193115+00:00",
+  "fetched_at": "2026-05-17T13:45:25.474128+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -100,14 +100,6 @@
       }
     ],
     "Manchester United": [
-      {
-        "id": "740963",
-        "kickoff": "2026-05-17T11:30:00+00:00",
-        "league": "English Premier League",
-        "stage_key": null,
-        "home": "Manchester United",
-        "away": "Nottingham Forest"
-      },
       {
         "id": "740966",
         "kickoff": "2026-05-24T15:00:00+00:00",
