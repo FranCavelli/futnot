@@ -159,5 +159,13 @@
       60
     ],
     "start_sent": true
+  },
+  "401867324": {
+    "kickoff": "2026-05-31T18:00:00+00:00",
+    "team": "Racing Club",
+    "match": "Racing Club vs Defensa y Justicia",
+    "league": "Copa Argentina",
+    "pre_marks_sent": [],
+    "start_sent": false
   }
 }

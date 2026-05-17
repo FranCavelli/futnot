@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-05-16T19:40:26.503724+00:00",
+  "fetched_at": "2026-05-17T01:45:20.672681+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -20,14 +20,6 @@
       }
     ],
     "River Plate": [
-      {
-        "id": "401872650",
-        "kickoff": "2026-05-16T22:30:00+00:00",
-        "league": "Argentine Liga Profesional de Fútbol",
-        "stage_key": null,
-        "home": "River Plate",
-        "away": "Rosario Central"
-      },
       {
         "id": "401865445",
         "kickoff": "2026-05-21T00:30:00+00:00",
@@ -61,6 +53,14 @@
         "stage_key": null,
         "home": "Racing Club",
         "away": "Independiente Petrolero"
+      },
+      {
+        "id": "401867324",
+        "kickoff": "2026-05-31T18:00:00+00:00",
+        "league": "Copa Argentina",
+        "stage_key": null,
+        "home": "Racing Club",
+        "away": "Defensa y Justicia"
       }
     ],
     "FC Barcelona": [
