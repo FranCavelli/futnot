@@ -24,6 +24,7 @@
     "match": "Manchester United vs Nottingham Forest",
     "league": "English Premier League",
     "pre_marks_sent": [
+      30,
       60
     ],
     "start_sent": false
