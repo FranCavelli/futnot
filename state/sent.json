@@ -173,5 +173,13 @@
     "league": "Copa Argentina",
     "pre_marks_sent": [],
     "start_sent": false
+  },
+  "401873392": {
+    "kickoff": "2026-05-24T18:00:00+00:00",
+    "team": "River Plate",
+    "match": "River Plate vs Belgrano (Córdoba)",
+    "league": "Argentine Liga Profesional de Fútbol",
+    "pre_marks_sent": [],
+    "start_sent": false
   }
 }
