@@ -139,17 +139,6 @@
     "pre_marks_sent": [],
     "start_sent": false
   },
-  "401872650": {
-    "kickoff": "2026-05-16T22:30:00+00:00",
-    "team": "River Plate",
-    "match": "River Plate vs Rosario Central",
-    "league": "Argentine Liga Profesional de Fútbol",
-    "pre_marks_sent": [
-      30,
-      60
-    ],
-    "start_sent": true
-  },
   "401867324": {
     "kickoff": "2026-05-31T18:00:00+00:00",
     "team": "Racing Club",
