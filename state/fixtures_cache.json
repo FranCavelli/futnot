@@ -1,15 +1,7 @@
 {
-  "fetched_at": "2026-05-19T20:10:31.587647+00:00",
+  "fetched_at": "2026-05-20T02:15:27.215235+00:00",
   "by_team": {
     "Boca Juniors": [
-      {
-        "id": "401865538",
-        "kickoff": "2026-05-20T00:30:00+00:00",
-        "league": "CONMEBOL Libertadores",
-        "stage_key": null,
-        "home": "Boca Juniors",
-        "away": "Cruzeiro"
-      },
       {
         "id": "401865549",
         "kickoff": "2026-05-29T00:30:00+00:00",
@@ -83,14 +75,6 @@
     ],
     "Manchester City": [
       {
-        "id": "740958",
-        "kickoff": "2026-05-19T18:30:00+00:00",
-        "league": "English Premier League",
-        "stage_key": null,
-        "home": "AFC Bournemouth",
-        "away": "Manchester City"
-      },
-      {
         "id": "740970",
         "kickoff": "2026-05-24T15:00:00+00:00",
         "league": "English Premier League",
@@ -120,14 +104,6 @@
       }
     ],
     "Chelsea": [
-      {
-        "id": "740960",
-        "kickoff": "2026-05-19T19:15:00+00:00",
-        "league": "English Premier League",
-        "stage_key": null,
-        "home": "Chelsea",
-        "away": "Tottenham Hotspur"
-      },
       {
         "id": "740973",
         "kickoff": "2026-05-24T15:00:00+00:00",
