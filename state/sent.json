@@ -56,7 +56,9 @@
     "team": "Racing Club",
     "match": "Racing Club vs Caracas FC",
     "league": "CONMEBOL Sudamericana",
-    "pre_marks_sent": [],
+    "pre_marks_sent": [
+      60
+    ],
     "start_sent": false
   },
   "748519": {
