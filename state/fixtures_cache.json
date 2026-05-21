@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-05-20T20:25:16.472471+00:00",
+  "fetched_at": "2026-05-21T02:25:19.385682+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -19,14 +19,6 @@
         "stage_key": null,
         "home": "River Plate",
         "away": "Belgrano (Córdoba)"
-      },
-      {
-        "id": "401865445",
-        "kickoff": "2026-05-21T00:30:00+00:00",
-        "league": "CONMEBOL Sudamericana",
-        "stage_key": null,
-        "home": "River Plate",
-        "away": "Red Bull Bragantino"
       },
       {
         "id": "401865462",
