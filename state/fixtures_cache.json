@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-05-24T15:05:24.969831+00:00",
+  "fetched_at": "2026-05-24T21:10:23.488011+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -20,14 +20,6 @@
       }
     ],
     "River Plate": [
-      {
-        "id": "401873392",
-        "kickoff": "2026-05-24T18:30:00+00:00",
-        "league": "Argentine Liga Profesional de Fútbol",
-        "stage_key": null,
-        "home": "River Plate",
-        "away": "Belgrano (Córdoba)"
-      },
       {
         "id": "401865462",
         "kickoff": "2026-05-28T00:30:00+00:00",
@@ -64,46 +56,10 @@
       }
     ],
     "FC Barcelona": [],
-    "Manchester City": [
-      {
-        "id": "740970",
-        "kickoff": "2026-05-24T15:00:00+00:00",
-        "league": "English Premier League",
-        "stage_key": null,
-        "home": "Manchester City",
-        "away": "Aston Villa"
-      }
-    ],
-    "Manchester United": [
-      {
-        "id": "740966",
-        "kickoff": "2026-05-24T15:00:00+00:00",
-        "league": "English Premier League",
-        "stage_key": null,
-        "home": "Brighton & Hove Albion",
-        "away": "Manchester United"
-      }
-    ],
-    "Liverpool": [
-      {
-        "id": "740975",
-        "kickoff": "2026-05-24T15:00:00+00:00",
-        "league": "English Premier League",
-        "stage_key": null,
-        "home": "Liverpool",
-        "away": "Brentford"
-      }
-    ],
-    "Chelsea": [
-      {
-        "id": "740973",
-        "kickoff": "2026-05-24T15:00:00+00:00",
-        "league": "English Premier League",
-        "stage_key": null,
-        "home": "Sunderland",
-        "away": "Chelsea"
-      }
-    ]
+    "Manchester City": [],
+    "Manchester United": [],
+    "Liverpool": [],
+    "Chelsea": []
   },
   "knockouts": []
 }
