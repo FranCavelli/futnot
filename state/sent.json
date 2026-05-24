@@ -27,6 +27,7 @@
     "match": "Manchester City vs Aston Villa",
     "league": "English Premier League",
     "pre_marks_sent": [
+      30,
       60
     ],
     "start_sent": false
@@ -37,6 +38,7 @@
     "match": "Brighton & Hove Albion vs Manchester United",
     "league": "English Premier League",
     "pre_marks_sent": [
+      30,
       60
     ],
     "start_sent": false
@@ -47,6 +49,7 @@
     "match": "Liverpool vs Brentford",
     "league": "English Premier League",
     "pre_marks_sent": [
+      30,
       60
     ],
     "start_sent": false
@@ -57,6 +60,7 @@
     "match": "Sunderland vs Chelsea",
     "league": "English Premier League",
     "pre_marks_sent": [
+      30,
       60
     ],
     "start_sent": false
