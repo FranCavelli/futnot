@@ -92,5 +92,21 @@
     "league": "Argentine Liga Profesional de Fútbol",
     "pre_marks_sent": [],
     "start_sent": false
+  },
+  "401867737": {
+    "kickoff": "2026-06-07T18:00:00+00:00",
+    "team": "Boca Juniors",
+    "match": "Sarmiento (Junín) vs Boca Juniors",
+    "league": "Copa Argentina",
+    "pre_marks_sent": [],
+    "start_sent": false
+  },
+  "401861869": {
+    "kickoff": "2026-06-07T18:00:00+00:00",
+    "team": "River Plate",
+    "match": "River Plate vs Aldosivi",
+    "league": "Copa Argentina",
+    "pre_marks_sent": [],
+    "start_sent": false
   }
 }

@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-05-23T20:55:19.602742+00:00",
+  "fetched_at": "2026-05-24T03:00:51.239567+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -9,6 +9,14 @@
         "stage_key": null,
         "home": "Boca Juniors",
         "away": "Universidad Católica"
+      },
+      {
+        "id": "401867737",
+        "kickoff": "2026-06-07T18:00:00+00:00",
+        "league": "Copa Argentina",
+        "stage_key": null,
+        "home": "Sarmiento (Junín)",
+        "away": "Boca Juniors"
       }
     ],
     "River Plate": [
@@ -27,6 +35,14 @@
         "stage_key": null,
         "home": "River Plate",
         "away": "Blooming"
+      },
+      {
+        "id": "401861869",
+        "kickoff": "2026-06-07T18:00:00+00:00",
+        "league": "Copa Argentina",
+        "stage_key": null,
+        "home": "River Plate",
+        "away": "Aldosivi"
       }
     ],
     "Racing Club": [
@@ -47,16 +63,7 @@
         "away": "Defensa y Justicia"
       }
     ],
-    "FC Barcelona": [
-      {
-        "id": "748519",
-        "kickoff": "2026-05-23T19:00:00+00:00",
-        "league": "Spanish LALIGA",
-        "stage_key": null,
-        "home": "Valencia",
-        "away": "Barcelona"
-      }
-    ],
+    "FC Barcelona": [],
     "Manchester City": [
       {
         "id": "740970",
