@@ -12,7 +12,9 @@
     "team": "Racing Club",
     "match": "Racing Club vs Independiente Petrolero",
     "league": "CONMEBOL Sudamericana",
-    "pre_marks_sent": [],
+    "pre_marks_sent": [
+      60
+    ],
     "start_sent": false
   },
   "401865549": {
