@@ -1,48 +1,4 @@
 {
-  "740970": {
-    "kickoff": "2026-05-24T15:00:00+00:00",
-    "team": "Manchester City",
-    "match": "Manchester City vs Aston Villa",
-    "league": "English Premier League",
-    "pre_marks_sent": [
-      30,
-      60
-    ],
-    "start_sent": true
-  },
-  "740966": {
-    "kickoff": "2026-05-24T15:00:00+00:00",
-    "team": "Manchester United",
-    "match": "Brighton & Hove Albion vs Manchester United",
-    "league": "English Premier League",
-    "pre_marks_sent": [
-      30,
-      60
-    ],
-    "start_sent": true
-  },
-  "740975": {
-    "kickoff": "2026-05-24T15:00:00+00:00",
-    "team": "Liverpool",
-    "match": "Liverpool vs Brentford",
-    "league": "English Premier League",
-    "pre_marks_sent": [
-      30,
-      60
-    ],
-    "start_sent": true
-  },
-  "740973": {
-    "kickoff": "2026-05-24T15:00:00+00:00",
-    "team": "Chelsea",
-    "match": "Sunderland vs Chelsea",
-    "league": "English Premier League",
-    "pre_marks_sent": [
-      30,
-      60
-    ],
-    "start_sent": true
-  },
   "401865462": {
     "kickoff": "2026-05-28T00:30:00+00:00",
     "team": "River Plate",
