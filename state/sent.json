@@ -27,6 +27,7 @@
     "match": "Boca Juniors vs Universidad Católica",
     "league": "CONMEBOL Libertadores",
     "pre_marks_sent": [
+      30,
       60
     ],
     "start_sent": false
