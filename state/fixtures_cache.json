@@ -1,10 +1,10 @@
 {
-  "fetched_at": "2026-05-30T03:50:23.132147+00:00",
+  "fetched_at": "2026-05-30T09:50:23.836591+00:00",
   "by_team": {
     "Boca Juniors": [
       {
         "id": "401867737",
-        "kickoff": "2026-06-07T18:00:00+00:00",
+        "kickoff": "2026-06-07T04:00:00+00:00",
         "league": "Copa Argentina",
         "stage_key": null,
         "home": "Sarmiento (Junín)",
@@ -14,7 +14,7 @@
     "River Plate": [
       {
         "id": "401861869",
-        "kickoff": "2026-06-07T18:00:00+00:00",
+        "kickoff": "2026-06-07T04:00:00+00:00",
         "league": "Copa Argentina",
         "stage_key": null,
         "home": "River Plate",
@@ -24,7 +24,7 @@
     "Racing Club": [
       {
         "id": "401867324",
-        "kickoff": "2026-05-31T18:00:00+00:00",
+        "kickoff": "2026-05-31T22:00:00+00:00",
         "league": "Copa Argentina",
         "stage_key": null,
         "home": "Racing Club",

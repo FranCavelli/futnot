@@ -33,7 +33,7 @@
     "start_sent": true
   },
   "401867324": {
-    "kickoff": "2026-05-31T18:00:00+00:00",
+    "kickoff": "2026-05-31T22:00:00+00:00",
     "team": "Racing Club",
     "match": "Racing Club vs Defensa y Justicia",
     "league": "Copa Argentina",
@@ -41,7 +41,7 @@
     "start_sent": false
   },
   "401867737": {
-    "kickoff": "2026-06-07T18:00:00+00:00",
+    "kickoff": "2026-06-07T04:00:00+00:00",
     "team": "Boca Juniors",
     "match": "Sarmiento (Junín) vs Boca Juniors",
     "league": "Copa Argentina",
@@ -49,7 +49,7 @@
     "start_sent": false
   },
   "401861869": {
-    "kickoff": "2026-06-07T18:00:00+00:00",
+    "kickoff": "2026-06-07T04:00:00+00:00",
     "team": "River Plate",
     "match": "River Plate vs Aldosivi",
     "league": "Copa Argentina",
