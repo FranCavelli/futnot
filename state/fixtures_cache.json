@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-06-24T23:55:18.323273+00:00",
+  "fetched_at": "2026-06-25T00:00:54.130272+00:00",
   "by_team": {
     "Boca Juniors": [],
     "River Plate": [],
@@ -10,5 +10,14 @@
     "Liverpool": [],
     "Chelsea": []
   },
-  "knockouts": []
+  "knockouts": [
+    {
+      "id": "760510",
+      "kickoff": "2026-07-09T20:00:00+00:00",
+      "league": "FIFA World Cup — Octavos de final",
+      "stage_key": "round_of_16",
+      "home": "Round of 16 1 Winner",
+      "away": "Round of 16 2 Winner"
+    }
+  ]
 }
