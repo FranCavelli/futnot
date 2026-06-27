@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-06-26T18:15:27.135135+00:00",
+  "fetched_at": "2026-06-27T00:20:22.941676+00:00",
   "by_team": {
     "Boca Juniors": [],
     "River Plate": [],
@@ -26,6 +26,22 @@
       "stage_key": "round_of_16",
       "home": "Round of 16 5 Winner",
       "away": "Round of 16 6 Winner"
+    },
+    {
+      "id": "760512",
+      "kickoff": "2026-07-11T21:00:00+00:00",
+      "league": "FIFA World Cup — Octavos de final",
+      "stage_key": "round_of_16",
+      "home": "Round of 16 3 Winner",
+      "away": "Round of 16 4 Winner"
+    },
+    {
+      "id": "760513",
+      "kickoff": "2026-07-12T01:00:00+00:00",
+      "league": "FIFA World Cup — Octavos de final",
+      "stage_key": "round_of_16",
+      "home": "Round of 16 7 Winner",
+      "away": "Round of 16 8 Winner"
     }
   ]
 }
