@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-06-30T19:00:55.531518+00:00",
+  "fetched_at": "2026-07-01T01:05:18.307466+00:00",
   "by_team": {
     "Boca Juniors": [],
     "River Plate": [],
@@ -50,6 +50,14 @@
       "stage_key": "quarterfinal",
       "home": "Quarterfinal 1 Winner",
       "away": "Quarterfinal 2 Winner"
+    },
+    {
+      "id": "760515",
+      "kickoff": "2026-07-15T19:00:00+00:00",
+      "league": "FIFA World Cup — Cuartos de final",
+      "stage_key": "quarterfinal",
+      "home": "Quarterfinal 3 Winner",
+      "away": "Quarterfinal 4 Winner"
     }
   ]
 }
