@@ -1,9 +1,27 @@
 {
-  "fetched_at": "2026-07-01T19:15:29.067881+00:00",
+  "fetched_at": "2026-07-02T01:15:30.766855+00:00",
   "by_team": {
-    "Boca Juniors": [],
+    "Boca Juniors": [
+      {
+        "id": "401867737",
+        "kickoff": "2026-07-17T00:45:00+00:00",
+        "league": "Copa Argentina",
+        "stage_key": null,
+        "home": "Sarmiento (Junín)",
+        "away": "Boca Juniors"
+      }
+    ],
     "River Plate": [],
-    "Racing Club": [],
+    "Racing Club": [
+      {
+        "id": "401867324",
+        "kickoff": "2026-07-16T21:45:00+00:00",
+        "league": "Copa Argentina",
+        "stage_key": null,
+        "home": "Racing Club",
+        "away": "Defensa y Justicia"
+      }
+    ],
     "FC Barcelona": [],
     "Manchester City": [],
     "Manchester United": [],

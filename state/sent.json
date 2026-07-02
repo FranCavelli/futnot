@@ -46,5 +46,21 @@
     "league": "FIFA World Cup — Cuartos de final",
     "pre_marks_sent": [],
     "start_sent": false
+  },
+  "401867737": {
+    "kickoff": "2026-07-17T00:45:00+00:00",
+    "team": "Boca Juniors",
+    "match": "Sarmiento (Junín) vs Boca Juniors",
+    "league": "Copa Argentina",
+    "pre_marks_sent": [],
+    "start_sent": false
+  },
+  "401867324": {
+    "kickoff": "2026-07-16T21:45:00+00:00",
+    "team": "Racing Club",
+    "match": "Racing Club vs Defensa y Justicia",
+    "league": "Copa Argentina",
+    "pre_marks_sent": [],
+    "start_sent": false
   }
 }
