@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-02T19:25:21.802683+00:00",
+  "fetched_at": "2026-07-03T01:30:50.535654+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -11,7 +11,16 @@
         "away": "Boca Juniors"
       }
     ],
-    "River Plate": [],
+    "River Plate": [
+      {
+        "id": "401861869",
+        "kickoff": "2026-07-18T00:45:00+00:00",
+        "league": "Copa Argentina",
+        "stage_key": null,
+        "home": "River Plate",
+        "away": "Aldosivi"
+      }
+    ],
     "Racing Club": [
       {
         "id": "401867324",
