@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-03T19:40:33.736669+00:00",
+  "fetched_at": "2026-07-04T01:45:29.240859+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -85,6 +85,14 @@
       "stage_key": "quarterfinal",
       "home": "Quarterfinal 3 Winner",
       "away": "Quarterfinal 4 Winner"
+    },
+    {
+      "id": "760516",
+      "kickoff": "2026-07-18T21:00:00+00:00",
+      "league": "FIFA World Cup — Semifinal",
+      "stage_key": "semifinal",
+      "home": "Semifinal 1 Loser",
+      "away": "Semifinal 2 Loser"
     }
   ]
 }
