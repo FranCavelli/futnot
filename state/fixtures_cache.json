@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-07T20:20:52.148694+00:00",
+  "fetched_at": "2026-07-08T02:25:19.798133+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -38,14 +38,6 @@
     "Chelsea": []
   },
   "knockouts": [
-    {
-      "id": "760513",
-      "kickoff": "2026-07-12T01:00:00+00:00",
-      "league": "FIFA World Cup — Octavos de final",
-      "stage_key": "round_of_16",
-      "home": "Argentina",
-      "away": "Round of 16 8 Winner"
-    },
     {
       "id": "760514",
       "kickoff": "2026-07-14T19:00:00+00:00",
