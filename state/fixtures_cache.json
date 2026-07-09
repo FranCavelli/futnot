@@ -1,7 +1,15 @@
 {
-  "fetched_at": "2026-07-08T20:35:20.281614+00:00",
+  "fetched_at": "2026-07-09T02:35:21.024544+00:00",
   "by_team": {
     "Boca Juniors": [
+      {
+        "id": "401874154",
+        "kickoff": "2026-07-24T00:30:00+00:00",
+        "league": "CONMEBOL Sudamericana",
+        "stage_key": null,
+        "home": "Boca Juniors",
+        "away": "O'Higgins"
+      },
       {
         "id": "401867737",
         "kickoff": "2026-07-17T00:45:00+00:00",
