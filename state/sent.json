@@ -94,5 +94,13 @@
     "league": "CONMEBOL Sudamericana",
     "pre_marks_sent": [],
     "start_sent": false
+  },
+  "401841439": {
+    "kickoff": "2026-07-24T22:00:00+00:00",
+    "team": "Racing Club",
+    "match": "Racing Club vs Gimnasia La Plata",
+    "league": "Argentine Liga Profesional de Fútbol",
+    "pre_marks_sent": [],
+    "start_sent": false
   }
 }

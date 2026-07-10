@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-09T20:50:49.505460+00:00",
+  "fetched_at": "2026-07-10T02:55:18.546730+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -31,6 +31,14 @@
     ],
     "Racing Club": [
       {
+        "id": "401841439",
+        "kickoff": "2026-07-24T22:00:00+00:00",
+        "league": "Argentine Liga Profesional de Fútbol",
+        "stage_key": null,
+        "home": "Racing Club",
+        "away": "Gimnasia La Plata"
+      },
+      {
         "id": "401867324",
         "kickoff": "2026-07-16T21:45:00+00:00",
         "league": "Copa Argentina",
@@ -51,7 +59,7 @@
       "kickoff": "2026-07-14T19:00:00+00:00",
       "league": "FIFA World Cup — Cuartos de final",
       "stage_key": "quarterfinal",
-      "home": "Quarterfinal 1 Winner",
+      "home": "France",
       "away": "Quarterfinal 2 Winner"
     },
     {
