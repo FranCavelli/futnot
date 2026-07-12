@@ -1,7 +1,15 @@
 {
-  "fetched_at": "2026-07-11T21:20:51.798466+00:00",
+  "fetched_at": "2026-07-12T03:25:19.047574+00:00",
   "by_team": {
     "Boca Juniors": [
+      {
+        "id": "401841447",
+        "kickoff": "2026-07-26T22:30:00+00:00",
+        "league": "Argentine Liga Profesional de Fútbol",
+        "stage_key": null,
+        "home": "Deportivo Riestra",
+        "away": "Boca Juniors"
+      },
       {
         "id": "401874154",
         "kickoff": "2026-07-24T00:30:00+00:00",
@@ -67,7 +75,7 @@
       "kickoff": "2026-07-15T19:00:00+00:00",
       "league": "FIFA World Cup — Cuartos de final",
       "stage_key": "quarterfinal",
-      "home": "Quarterfinal 3 Winner",
+      "home": "England",
       "away": "Quarterfinal 4 Winner"
     },
     {
