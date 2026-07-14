@@ -102,5 +102,13 @@
     "league": "Argentine Liga Profesional de Fútbol",
     "pre_marks_sent": [],
     "start_sent": false
+  },
+  "401841453": {
+    "kickoff": "2026-07-29T00:15:00+00:00",
+    "team": "Racing Club",
+    "match": "Rosario Central vs Racing Club",
+    "league": "Argentine Liga Profesional de Fútbol",
+    "pre_marks_sent": [],
+    "start_sent": false
   }
 }

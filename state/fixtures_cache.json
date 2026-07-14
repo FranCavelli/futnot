@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-13T21:50:53.339610+00:00",
+  "fetched_at": "2026-07-14T03:50:53.915699+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -53,6 +53,14 @@
         "stage_key": null,
         "home": "Racing Club",
         "away": "Gimnasia La Plata"
+      },
+      {
+        "id": "401841453",
+        "kickoff": "2026-07-29T00:15:00+00:00",
+        "league": "Argentine Liga Profesional de Fútbol",
+        "stage_key": null,
+        "home": "Rosario Central",
+        "away": "Racing Club"
       },
       {
         "id": "401867324",
