@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-14T15:55:22.054006+00:00",
+  "fetched_at": "2026-07-14T22:01:08.840658+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -83,7 +83,7 @@
       "kickoff": "2026-07-18T21:00:00+00:00",
       "league": "FIFA World Cup — Semifinal",
       "stage_key": "semifinal",
-      "home": "Semifinal 1 Loser",
+      "home": "France",
       "away": "Semifinal 2 Loser"
     },
     {
@@ -91,7 +91,7 @@
       "kickoff": "2026-07-19T19:00:00+00:00",
       "league": "FIFA World Cup — Semifinal",
       "stage_key": "semifinal",
-      "home": "Semifinal 1 Winner",
+      "home": "Spain",
       "away": "Semifinal 2 Winner"
     }
   ]
