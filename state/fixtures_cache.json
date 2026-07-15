@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-15T16:01:16.258970+00:00",
+  "fetched_at": "2026-07-15T22:05:19.382290+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -85,22 +85,5 @@
     "Liverpool": [],
     "Chelsea": []
   },
-  "knockouts": [
-    {
-      "id": "760516",
-      "kickoff": "2026-07-18T21:00:00+00:00",
-      "league": "FIFA World Cup — Semifinal",
-      "stage_key": "semifinal",
-      "home": "France",
-      "away": "Semifinal 2 Loser"
-    },
-    {
-      "id": "760517",
-      "kickoff": "2026-07-19T19:00:00+00:00",
-      "league": "FIFA World Cup — Semifinal",
-      "stage_key": "semifinal",
-      "home": "Spain",
-      "away": "Semifinal 2 Winner"
-    }
-  ]
+  "knockouts": []
 }
