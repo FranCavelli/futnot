@@ -20,7 +20,9 @@
     "team": "Boca Juniors",
     "match": "Sarmiento (Junín) vs Boca Juniors",
     "league": "Copa Argentina",
-    "pre_marks_sent": [],
+    "pre_marks_sent": [
+      60
+    ],
     "start_sent": false
   },
   "401867324": {
