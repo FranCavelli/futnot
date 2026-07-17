@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-16T22:20:29.116122+00:00",
+  "fetched_at": "2026-07-17T04:20:30.088146+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -24,14 +24,6 @@
         "league": "CONMEBOL Sudamericana",
         "stage_key": null,
         "home": "O'Higgins",
-        "away": "Boca Juniors"
-      },
-      {
-        "id": "401867737",
-        "kickoff": "2026-07-17T00:45:00+00:00",
-        "league": "Copa Argentina",
-        "stage_key": null,
-        "home": "Sarmiento (Junín)",
         "away": "Boca Juniors"
       }
     ],
@@ -77,14 +69,6 @@
         "stage_key": null,
         "home": "Rosario Central",
         "away": "Racing Club"
-      },
-      {
-        "id": "401867324",
-        "kickoff": "2026-07-16T21:45:00+00:00",
-        "league": "Copa Argentina",
-        "stage_key": null,
-        "home": "Racing Club",
-        "away": "Defensa y Justicia"
       }
     ],
     "FC Barcelona": [],
