@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-17T22:25:32.589004+00:00",
+  "fetched_at": "2026-07-18T04:30:41.066400+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -43,14 +43,6 @@
         "stage_key": null,
         "home": "Gimnasia La Plata",
         "away": "River Plate"
-      },
-      {
-        "id": "401861869",
-        "kickoff": "2026-07-18T00:45:00+00:00",
-        "league": "Copa Argentina",
-        "stage_key": null,
-        "home": "River Plate",
-        "away": "Aldosivi"
       }
     ],
     "Racing Club": [
@@ -69,6 +61,14 @@
         "stage_key": null,
         "home": "Rosario Central",
         "away": "Racing Club"
+      },
+      {
+        "id": "401841475",
+        "kickoff": "2026-08-01T23:30:00+00:00",
+        "league": "Argentine Liga Profesional de Fútbol",
+        "stage_key": null,
+        "home": "Racing Club",
+        "away": "Tigre"
       }
     ],
     "FC Barcelona": [],
