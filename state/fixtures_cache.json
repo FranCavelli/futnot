@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-18T22:35:19.569349+00:00",
+  "fetched_at": "2026-07-19T04:40:23.357530+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -8,6 +8,14 @@
         "league": "Argentine Liga Profesional de Fútbol",
         "stage_key": null,
         "home": "Deportivo Riestra",
+        "away": "Boca Juniors"
+      },
+      {
+        "id": "401841473",
+        "kickoff": "2026-08-02T20:00:00+00:00",
+        "league": "Argentine Liga Profesional de Fútbol",
+        "stage_key": null,
+        "home": "Newell's Old Boys",
         "away": "Boca Juniors"
       },
       {
@@ -43,6 +51,14 @@
         "stage_key": null,
         "home": "Gimnasia La Plata",
         "away": "River Plate"
+      },
+      {
+        "id": "401841476",
+        "kickoff": "2026-08-02T22:15:00+00:00",
+        "league": "Argentine Liga Profesional de Fútbol",
+        "stage_key": null,
+        "home": "River Plate",
+        "away": "Rosario Central"
       }
     ],
     "Racing Club": [

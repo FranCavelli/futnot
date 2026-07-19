@@ -111,5 +111,21 @@
     "league": "Argentine Liga Profesional de Fútbol",
     "pre_marks_sent": [],
     "start_sent": false
+  },
+  "401841473": {
+    "kickoff": "2026-08-02T20:00:00+00:00",
+    "team": "Boca Juniors",
+    "match": "Newell's Old Boys vs Boca Juniors",
+    "league": "Argentine Liga Profesional de Fútbol",
+    "pre_marks_sent": [],
+    "start_sent": false
+  },
+  "401841476": {
+    "kickoff": "2026-08-02T22:15:00+00:00",
+    "team": "River Plate",
+    "match": "River Plate vs Rosario Central",
+    "league": "Argentine Liga Profesional de Fútbol",
+    "pre_marks_sent": [],
+    "start_sent": false
   }
 }
