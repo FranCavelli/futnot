@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-21T23:10:28.839090+00:00",
+  "fetched_at": "2026-07-22T05:15:26.724794+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -17,6 +17,14 @@
         "stage_key": null,
         "home": "Newell's Old Boys",
         "away": "Boca Juniors"
+      },
+      {
+        "id": "401841460",
+        "kickoff": "2026-08-05T22:00:00+00:00",
+        "league": "Argentine Liga Profesional de Fútbol",
+        "stage_key": null,
+        "home": "Boca Juniors",
+        "away": "Estudiantes de La Plata"
       },
       {
         "id": "401874154",
