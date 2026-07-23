@@ -4,7 +4,9 @@
     "team": "Boca Juniors",
     "match": "Boca Juniors vs O'Higgins",
     "league": "CONMEBOL Sudamericana",
-    "pre_marks_sent": [],
+    "pre_marks_sent": [
+      60
+    ],
     "start_sent": false
   },
   "401841439": {
