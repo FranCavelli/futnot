@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-24T23:40:24.000972+00:00",
+  "fetched_at": "2026-07-25T05:40:26.919746+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -62,14 +62,6 @@
       }
     ],
     "Racing Club": [
-      {
-        "id": "401841439",
-        "kickoff": "2026-07-24T22:00:00+00:00",
-        "league": "Argentine Liga Profesional de Fútbol",
-        "stage_key": null,
-        "home": "Racing Club",
-        "away": "Gimnasia La Plata"
-      },
       {
         "id": "401841453",
         "kickoff": "2026-07-29T00:15:00+00:00",
