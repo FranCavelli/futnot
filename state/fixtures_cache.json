@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-25T11:45:30.537372+00:00",
+  "fetched_at": "2026-07-26T12:20:35.736070+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -27,6 +27,14 @@
         "away": "Estudiantes de La Plata"
       },
       {
+        "id": "401841482",
+        "kickoff": "2026-08-09T18:00:00+00:00",
+        "league": "Argentine Liga Profesional de Fútbol",
+        "stage_key": null,
+        "home": "Boca Juniors",
+        "away": "Vélez Sarsfield"
+      },
+      {
         "id": "401874164",
         "kickoff": "2026-07-31T00:30:00+00:00",
         "league": "CONMEBOL Sudamericana",
@@ -36,14 +44,6 @@
       }
     ],
     "River Plate": [
-      {
-        "id": "401841438",
-        "kickoff": "2026-07-25T22:15:00+00:00",
-        "league": "Argentine Liga Profesional de Fútbol",
-        "stage_key": null,
-        "home": "River Plate",
-        "away": "Barracas Central"
-      },
       {
         "id": "401841457",
         "kickoff": "2026-07-29T22:15:00+00:00",
@@ -59,6 +59,14 @@
         "stage_key": null,
         "home": "River Plate",
         "away": "Rosario Central"
+      },
+      {
+        "id": "401841488",
+        "kickoff": "2026-08-09T18:00:00+00:00",
+        "league": "Argentine Liga Profesional de Fútbol",
+        "stage_key": null,
+        "home": "Tigre",
+        "away": "River Plate"
       }
     ],
     "Racing Club": [
@@ -77,6 +85,14 @@
         "stage_key": null,
         "home": "Racing Club",
         "away": "Tigre"
+      },
+      {
+        "id": "401841485",
+        "kickoff": "2026-08-09T18:00:00+00:00",
+        "league": "Argentine Liga Profesional de Fútbol",
+        "stage_key": null,
+        "home": "Argentinos Juniors",
+        "away": "Racing Club"
       }
     ],
     "FC Barcelona": [],
