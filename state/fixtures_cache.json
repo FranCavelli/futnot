@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-29T19:05:26.533061+00:00",
+  "fetched_at": "2026-07-30T01:10:23.727458+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -36,14 +36,6 @@
       }
     ],
     "River Plate": [
-      {
-        "id": "401841457",
-        "kickoff": "2026-07-29T22:15:00+00:00",
-        "league": "Argentine Liga Profesional de Fútbol",
-        "stage_key": null,
-        "home": "Gimnasia La Plata",
-        "away": "River Plate"
-      },
       {
         "id": "401841476",
         "kickoff": "2026-08-02T22:15:00+00:00",
