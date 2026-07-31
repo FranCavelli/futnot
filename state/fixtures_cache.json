@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-30T19:15:40.574725+00:00",
+  "fetched_at": "2026-07-31T01:20:31.224247+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -25,14 +25,6 @@
         "stage_key": null,
         "home": "Boca Juniors",
         "away": "Vélez Sarsfield"
-      },
-      {
-        "id": "401874164",
-        "kickoff": "2026-07-31T00:30:00+00:00",
-        "league": "CONMEBOL Sudamericana",
-        "stage_key": null,
-        "home": "O'Higgins",
-        "away": "Boca Juniors"
       }
     ],
     "River Plate": [
