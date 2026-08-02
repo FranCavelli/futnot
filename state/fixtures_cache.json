@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-02T07:50:33.607342+00:00",
+  "fetched_at": "2026-08-02T13:55:17.818251+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -20,7 +20,7 @@
       },
       {
         "id": "401841482",
-        "kickoff": "2026-08-09T18:00:00+00:00",
+        "kickoff": "2026-08-08T22:15:00+00:00",
         "league": "Argentine Liga Profesional de Fútbol",
         "stage_key": null,
         "home": "Boca Juniors",
@@ -28,7 +28,7 @@
       },
       {
         "id": "401841505",
-        "kickoff": "2026-08-16T18:00:00+00:00",
+        "kickoff": "2026-08-16T00:15:00+00:00",
         "league": "Argentine Liga Profesional de Fútbol",
         "stage_key": null,
         "home": "Platense",
@@ -54,7 +54,7 @@
       },
       {
         "id": "401841488",
-        "kickoff": "2026-08-09T18:00:00+00:00",
+        "kickoff": "2026-08-08T20:00:00+00:00",
         "league": "Argentine Liga Profesional de Fútbol",
         "stage_key": null,
         "home": "Tigre",
@@ -62,7 +62,7 @@
       },
       {
         "id": "401841503",
-        "kickoff": "2026-08-16T18:00:00+00:00",
+        "kickoff": "2026-08-16T21:00:00+00:00",
         "league": "Argentine Liga Profesional de Fútbol",
         "stage_key": null,
         "home": "River Plate",
@@ -80,7 +80,7 @@
     "Racing Club": [
       {
         "id": "401841485",
-        "kickoff": "2026-08-09T18:00:00+00:00",
+        "kickoff": "2026-08-09T23:15:00+00:00",
         "league": "Argentine Liga Profesional de Fútbol",
         "stage_key": null,
         "home": "Argentinos Juniors",
@@ -88,7 +88,7 @@
       },
       {
         "id": "401841504",
-        "kickoff": "2026-08-16T18:00:00+00:00",
+        "kickoff": "2026-08-14T23:30:00+00:00",
         "league": "Argentine Liga Profesional de Fútbol",
         "stage_key": null,
         "home": "Racing Club",
