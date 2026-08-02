@@ -26,7 +26,9 @@
     "team": "Boca Juniors",
     "match": "Newell's Old Boys vs Boca Juniors",
     "league": "Argentine Liga Profesional de Fútbol",
-    "pre_marks_sent": [],
+    "pre_marks_sent": [
+      60
+    ],
     "start_sent": false
   },
   "401841476": {
