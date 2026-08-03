@@ -1,15 +1,7 @@
 {
-  "fetched_at": "2026-08-02T19:55:24.753648+00:00",
+  "fetched_at": "2026-08-03T01:55:24.784431+00:00",
   "by_team": {
     "Boca Juniors": [
-      {
-        "id": "401841473",
-        "kickoff": "2026-08-02T20:00:00+00:00",
-        "league": "Argentine Liga Profesional de Fútbol",
-        "stage_key": null,
-        "home": "Newell's Old Boys",
-        "away": "Boca Juniors"
-      },
       {
         "id": "401841460",
         "kickoff": "2026-08-05T22:00:00+00:00",
@@ -44,14 +36,6 @@
       }
     ],
     "River Plate": [
-      {
-        "id": "401841476",
-        "kickoff": "2026-08-02T22:15:00+00:00",
-        "league": "Argentine Liga Profesional de Fútbol",
-        "stage_key": null,
-        "home": "River Plate",
-        "away": "Rosario Central"
-      },
       {
         "id": "401841488",
         "kickoff": "2026-08-08T20:00:00+00:00",
