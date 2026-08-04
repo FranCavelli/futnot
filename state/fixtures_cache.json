@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-03T20:00:47.958359+00:00",
+  "fetched_at": "2026-08-04T02:00:56.243591+00:00",
   "by_team": {
     "Boca Juniors": [
       {
@@ -33,6 +33,14 @@
         "stage_key": null,
         "home": "Boca Juniors",
         "away": "Deportivo Recoleta"
+      },
+      {
+        "id": "401903231",
+        "kickoff": "2026-08-18T22:00:00+00:00",
+        "league": "CONMEBOL Sudamericana",
+        "stage_key": null,
+        "home": "Deportivo Recoleta",
+        "away": "Boca Juniors"
       }
     ],
     "River Plate": [
