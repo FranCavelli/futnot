@@ -10,17 +10,6 @@
     ],
     "start_sent": true
   },
-  "401841488": {
-    "kickoff": "2026-08-08T20:00:00+00:00",
-    "team": "River Plate",
-    "match": "Tigre vs River Plate",
-    "league": "Argentine Liga Profesional de Fútbol",
-    "pre_marks_sent": [
-      30,
-      60
-    ],
-    "start_sent": true
-  },
   "401841485": {
     "kickoff": "2026-08-09T23:15:00+00:00",
     "team": "Racing Club",
@@ -84,6 +73,14 @@
     "kickoff": "2026-08-05T22:00:00+00:00",
     "team": "Boca Juniors",
     "match": "Boca Juniors vs Estudiantes de La Plata",
+    "league": "Argentine Liga Profesional de Fútbol",
+    "pre_marks_sent": [],
+    "start_sent": false
+  },
+  "401841488": {
+    "kickoff": "2026-08-08T20:00:00+00:00",
+    "team": "River Plate",
+    "match": "Tigre vs River Plate",
     "league": "Argentine Liga Profesional de Fútbol",
     "pre_marks_sent": [],
     "start_sent": false
