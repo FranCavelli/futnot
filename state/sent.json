@@ -31,7 +31,9 @@
     "team": "Racing Club",
     "match": "Racing Club vs Banfield",
     "league": "Argentine Liga Profesional de Fútbol",
-    "pre_marks_sent": [],
+    "pre_marks_sent": [
+      60
+    ],
     "start_sent": false
   },
   "401903231": {
