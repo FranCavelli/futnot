@@ -21,17 +21,6 @@
     ],
     "start_sent": true
   },
-  "401841504": {
-    "kickoff": "2026-08-14T23:30:00+00:00",
-    "team": "Racing Club",
-    "match": "Racing Club vs Banfield",
-    "league": "Argentine Liga Profesional de Fútbol",
-    "pre_marks_sent": [
-      30,
-      60
-    ],
-    "start_sent": true
-  },
   "401903231": {
     "kickoff": "2026-08-18T22:00:00+00:00",
     "team": "Boca Juniors",
@@ -84,6 +73,14 @@
     "kickoff": "2026-08-09T23:15:00+00:00",
     "team": "Racing Club",
     "match": "Argentinos Juniors vs Racing Club",
+    "league": "Argentine Liga Profesional de Fútbol",
+    "pre_marks_sent": [],
+    "start_sent": false
+  },
+  "401841504": {
+    "kickoff": "2026-08-14T23:30:00+00:00",
+    "team": "Racing Club",
+    "match": "Racing Club vs Banfield",
     "league": "Argentine Liga Profesional de Fútbol",
     "pre_marks_sent": [],
     "start_sent": false
